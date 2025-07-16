@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/internworkshop/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=internworkshop/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
 <meta name="author" content="hoangnguyen.lau@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/internworkshop/images/favicon.png" type="image/png">
 
     <title>Update IAM Role :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1752648942" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1752648942" rel="stylesheet">
-    <link href="/css/hybrid.css?1752648942" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1752648942" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1752648942" rel="stylesheet">
-    <link href="/css/auto-complete.css?1752648942" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1752648942" rel="stylesheet">
-    <link href="/css/theme.css?1752648942" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1752648942" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1752659559" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1752648942" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1752659559" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1752648942"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752659559"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/4-s3log/4.1-updateiamrole/">
+  <body class="" data-url="/internworkshop/4-s3log/4.1-updateiamrole/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1752648942"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1752648942"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752659559"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752659559"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "http:\/\/localhost:1313\/internworkshop\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1752648942"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1752659559"></script>
 
     
   </div>
@@ -82,12 +82,12 @@
  
   
     
-    <li data-nav-id="/1-introduce/" title="Introduction" class="dd-item 
+    <li data-nav-id="/internworkshop/1-introduce/" title="Introduction" class="dd-item 
         
         
         
         ">
-      <a href="/1-introduce/">
+      <a href="/internworkshop/1-introduce/">
            <b> 1. </b> Introduction
           
             <i class="fas fa-check read-icon"></i>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/internworkshop/2-prerequiste/" title="Preparation" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+      <a href="/internworkshop/2-prerequiste/">
+           <b> 2. </b> Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-createdynamodb/" title="Preparing DynamoDB Table" class="dd-item 
+    <li data-nav-id="/internworkshop/2-prerequiste/2.1-createdynamodb/" title="Prepare DynamoDB Table" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.1-createdynamodb/">
-           <b> 2.1 </b> Preparing DynamoDB Table
+      <a href="/internworkshop/2-prerequiste/2.1-createdynamodb/">
+           <b> 2.1 </b> Prepare DynamoDB Table
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,41 +167,41 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.3-createapigatway/" title="Create API Gateway" class="dd-item 
+    <li data-nav-id="/internworkshop/2-prerequiste/2.2-createlambda/" title="Create Lambda Function" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.3-createapigatway/">
+      <a href="/internworkshop/2-prerequiste/2.2-createlambda/">
+           <b> 2.2 </b> Create Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/2-prerequiste/2.3-createapigatway/" title="Create API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/2-prerequiste/2.3-createapigatway/">
            <b> 2.3 </b> Create API Gateway
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.2-createlambda/" title="Create IAM Role" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.2-createlambda/">
-           <b> 2.2 </b> Create IAM Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -230,12 +230,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/" title="Connect to EC2 servers" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/" title="Connect to EC2 servers" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/">
+      <a href="/internworkshop/3-accessibilitytoinstances/">
            <b> 3. </b> Connect to EC2 servers
           
             <i class="fas fa-check read-icon"></i>
@@ -261,12 +261,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.1-public-instance/" title="Connect to Public Instance" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.1-public-instance/" title="Connect to Public Instance" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.1-public-instance/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.1-public-instance/">
            <b> 3.1. </b> Connect to Public Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -289,12 +289,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/" title="Connect to Private instance" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/" title="Connect to Private instance" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/">
            <b> 3.2. </b> Connect to Private instance
           
             <i class="fas fa-check read-icon"></i>
@@ -320,12 +320,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Enable DNS hostnames" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Enable DNS hostnames" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
            <b> 3.2.1 </b> Enable DNS hostnames
           
             <i class="fas fa-check read-icon"></i>
@@ -348,12 +348,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Create VPC Endpoint" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Create VPC Endpoint" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
            <b> 3.2.2 </b> Create VPC Endpoint
           
             <i class="fas fa-check read-icon"></i>
@@ -379,12 +379,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Create Endpoint ssm" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Create Endpoint ssm" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
            <b> 3.2.2.1 </b> Create Endpoint ssm
           
             <i class="fas fa-check read-icon"></i>
@@ -407,12 +407,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Create Endpoint ssmmessages" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Create Endpoint ssmmessages" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
            <b> 3.2.2.2 </b> Create Endpoint ssmmessages
           
             <i class="fas fa-check read-icon"></i>
@@ -435,12 +435,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Create Endpoint ec2messages" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Create Endpoint ec2messages" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
            <b> 3.2.2.3 </b> Create Endpoint ec2messages
           
             <i class="fas fa-check read-icon"></i>
@@ -472,12 +472,12 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Connect to instance" class="dd-item 
+    <li data-nav-id="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Connect to instance" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
+      <a href="/internworkshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
            <b> 3.2.3 </b> Connect to instance
           
             <i class="fas fa-check read-icon"></i>
@@ -516,12 +516,12 @@
  
   
     
-    <li data-nav-id="/4-s3log/" title="API-First Development logs" class="dd-item 
+    <li data-nav-id="/internworkshop/4-s3log/" title="API-First Development logs" class="dd-item 
         parent
         
         
         ">
-      <a href="/4-s3log/">
+      <a href="/internworkshop/4-s3log/">
            <b> 4. </b> API-First Development logs
           
             <i class="fas fa-check read-icon"></i>
@@ -547,12 +547,12 @@
  
   
     
-    <li data-nav-id="/4-s3log/4.1-updateiamrole/" title="Update IAM Role" class="dd-item 
+    <li data-nav-id="/internworkshop/4-s3log/4.1-updateiamrole/" title="Update IAM Role" class="dd-item 
         
         active
         
         ">
-      <a href="/4-s3log/4.1-updateiamrole/">
+      <a href="/internworkshop/4-s3log/4.1-updateiamrole/">
            <b> 4.1 </b> Update IAM Role
           
             <i class="fas fa-check read-icon"></i>
@@ -575,12 +575,12 @@
  
   
     
-    <li data-nav-id="/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" class="dd-item 
+    <li data-nav-id="/internworkshop/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" class="dd-item 
         
         
         
         ">
-      <a href="/4-s3log/4.2-creates3bucket/">
+      <a href="/internworkshop/4-s3log/4.2-creates3bucket/">
            <b> 4.2 </b> Create S3 Bucket
           
             <i class="fas fa-check read-icon"></i>
@@ -603,12 +603,12 @@
  
   
     
-    <li data-nav-id="/4-s3log/4.3-creategwes3/" title="Create S3 Gateway endpoint" class="dd-item 
+    <li data-nav-id="/internworkshop/4-s3log/4.3-creategwes3/" title="Create S3 Gateway endpoint" class="dd-item 
         
         
         
         ">
-      <a href="/4-s3log/4.3-creategwes3/">
+      <a href="/internworkshop/4-s3log/4.3-creategwes3/">
            <b> 4.3 </b> Create S3 Gateway endpoint
           
             <i class="fas fa-check read-icon"></i>
@@ -631,12 +631,12 @@
  
   
     
-    <li data-nav-id="/4-s3log/4.4-configsessionlogs/" title="Monitor session logs" class="dd-item 
+    <li data-nav-id="/internworkshop/4-s3log/4.4-configsessionlogs/" title="Monitor session logs" class="dd-item 
         
         
         
         ">
-      <a href="/4-s3log/4.4-configsessionlogs/">
+      <a href="/internworkshop/4-s3log/4.4-configsessionlogs/">
            <b> 4.4 </b> Monitor session logs
           
             <i class="fas fa-check read-icon"></i>
@@ -666,12 +666,12 @@
  
   
     
-    <li data-nav-id="/5-portfwd/" title="Port Forwarding" class="dd-item 
+    <li data-nav-id="/internworkshop/5-portfwd/" title="Port Forwarding" class="dd-item 
         
         
         
         ">
-      <a href="/5-portfwd/">
+      <a href="/internworkshop/5-portfwd/">
            <b> 5. </b> Port Forwarding
           
             <i class="fas fa-check read-icon"></i>
@@ -692,12 +692,12 @@
  
   
     
-    <li data-nav-id="/6-cleanup/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/internworkshop/6-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
-      <a href="/6-cleanup/">
+      <a href="/internworkshop/6-cleanup/">
           <b>6. </b>Clean up resources
           
             <i class="fas fa-check read-icon"></i>
@@ -745,7 +745,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/4-s3log/4.1-updateiamrole/" selected>English</option>
+                      <option id="en" value="http://localhost:1313/internworkshop/4-s3log/4.1-updateiamrole/" selected>English</option>
                     
                   
               
@@ -759,7 +759,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/4-s3log/4.1-updateiamrole/">Tiếng Việt</option>
+                      <option id="vi" value="http://localhost:1313/internworkshop/vi/4-s3log/4.1-updateiamrole/">Tiếng Việt</option>
                     
                   
               
@@ -849,7 +849,7 @@
             
           
           
-            <a href='/'>API-First Development</a> > <a href='/4-s3log/'>API-First Development logs</a> > Update IAM Role
+            <a href='/internworkshop/'>API-First Development</a> > <a href='/internworkshop/4-s3log/'>API-First Development logs</a> > Update IAM Role
           
         
           
@@ -1320,10 +1320,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/4-s3log/" title="API-First Development logs"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/internworkshop/4-s3log/" title="API-First Development logs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/internworkshop/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1333,19 +1333,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1752648942"></script>
-    <script src="/js/perfect-scrollbar.min.js?1752648942"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1752648942"></script>
-    <script src="/js/jquery.sticky.js?1752648942"></script>
-    <script src="/js/featherlight.min.js?1752648942"></script>
-    <script src="/js/highlight.pack.js?1752648942"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1752659559"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752659559"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752659559"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1752659559"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1752659559"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1752659559"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1752648942"></script>
-    <script src="/js/learn.js?1752648942"></script>
-    <script src="/js/hugo-learn.js?1752648942"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752659559"></script>
+    <script src="/internworkshop/js/learn.js?1752659559"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1752659559"></script>
 
-    <link href="/mermaid/mermaid.css?1752648942" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1752648942"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1752659559" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1752659559"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/internworkshop/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=internworkshop/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
 <meta name="author" content="hoangnguyen.lau@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/internworkshop/images/favicon.png" type="image/png">
 
     <title>Tạo API Gateway :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1752657889" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1752657889" rel="stylesheet">
-    <link href="/css/hybrid.css?1752657889" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1752657889" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1752657889" rel="stylesheet">
-    <link href="/css/auto-complete.css?1752657889" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1752657889" rel="stylesheet">
-    <link href="/css/theme.css?1752657889" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1752657889" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1752659559" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1752659559" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1752657889" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1752659559" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1752657889"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752659559"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vi/2-prerequiste/2.3-createapigatway/">
+  <body class="" data-url="/internworkshop/vi/2-prerequiste/2.3-createapigatway/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1752657889"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1752657889"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752659559"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752659559"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/\/vi";
+        var baseurl = "http:\/\/localhost:1313\/internworkshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1752657889"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1752659559"></script>
 
     
   </div>
@@ -82,12 +82,12 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/1-introduce/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/">
+      <a href="/internworkshop/vi/1-introduce/">
            <b> 1. </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
@@ -108,12 +108,12 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
         parent
         
         
         ">
-      <a href="/vi/2-prerequiste/">
+      <a href="/internworkshop/vi/2-prerequiste/">
            <b> 2. </b> Các bước chuẩn bị
           
             <i class="fas fa-check read-icon"></i>
@@ -139,12 +139,12 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.1-createdynamodb/" title="Chuẩn bị bảng DynamoDB" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.1-createdynamodb/" title="Chuẩn bị bảng DynamoDB" class="dd-item 
         
         
         
         ">
-      <a href="/vi/2-prerequiste/2.1-createdynamodb/">
+      <a href="/internworkshop/vi/2-prerequiste/2.1-createdynamodb/">
            <b> 2.1 </b> Chuẩn bị bảng DynamoDB
           
             <i class="fas fa-check read-icon"></i>
@@ -167,12 +167,12 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.2-createlambda/" title="Tạo Lambda Function" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.2-createlambda/" title="Tạo Lambda Function" class="dd-item 
         
         
         
         ">
-      <a href="/vi/2-prerequiste/2.2-createlambda/">
+      <a href="/internworkshop/vi/2-prerequiste/2.2-createlambda/">
            <b> 2.2 </b> Tạo Lambda Function
           
             <i class="fas fa-check read-icon"></i>
@@ -195,12 +195,12 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.3-createapigatway/" title="Tạo API Gateway" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.3-createapigatway/" title="Tạo API Gateway" class="dd-item 
         
         active
         
         ">
-      <a href="/vi/2-prerequiste/2.3-createapigatway/">
+      <a href="/internworkshop/vi/2-prerequiste/2.3-createapigatway/">
            <b> 2.3 </b> Tạo API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -230,12 +230,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/">
            <b> 3. </b> Tạo kết nối đến máy chủ EC2
           
             <i class="fas fa-check read-icon"></i>
@@ -261,12 +261,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.1-public-instance/" title="Kết nối đến máy chủ Public" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.1-public-instance/" title="Kết nối đến máy chủ Public" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.1-public-instance/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.1-public-instance/">
            <b> 3.1. </b> Kết nối đến máy chủ Public
           
             <i class="fas fa-check read-icon"></i>
@@ -289,12 +289,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/" title="Tạo kết nối đến máy chủ EC2 Private" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/" title="Tạo kết nối đến máy chủ EC2 Private" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/">
            <b> 3.2. </b> Tạo kết nối đến máy chủ EC2 Private
           
             <i class="fas fa-check read-icon"></i>
@@ -320,12 +320,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Kích hoạt DNS hostnames" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Kích hoạt DNS hostnames" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
            <b> 3.2.1 </b> Kích hoạt DNS hostnames
           
             <i class="fas fa-check read-icon"></i>
@@ -348,12 +348,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Tạo VPC Endpoint" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Tạo VPC Endpoint" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
            <b> 3.2.2 </b> Tạo VPC Endpoint
           
             <i class="fas fa-check read-icon"></i>
@@ -379,12 +379,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Tạo Endpoint ssm" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Tạo Endpoint ssm" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
            <b> 3.2.2.1 </b> Tạo Endpoint ssm
           
             <i class="fas fa-check read-icon"></i>
@@ -407,12 +407,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Tạo Endpoint ssmmessages" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Tạo Endpoint ssmmessages" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
            <b> 3.2.2.2 </b> Tạo Endpoint ssmmessages
           
             <i class="fas fa-check read-icon"></i>
@@ -435,12 +435,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Tạo Endpoint ec2messages" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Tạo Endpoint ec2messages" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
            <b> 3.2.2.3 </b> Tạo Endpoint ec2messages
           
             <i class="fas fa-check read-icon"></i>
@@ -472,12 +472,12 @@
  
   
     
-    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Kết nối EC2 Private" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Kết nối EC2 Private" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
+      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
            <b> 3.2.3 </b> Kết nối EC2 Private
           
             <i class="fas fa-check read-icon"></i>
@@ -516,12 +516,12 @@
  
   
     
-    <li data-nav-id="/vi/4-s3log/" title="Quản lý session logs" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/4-s3log/" title="Quản lý session logs" class="dd-item 
         
         
         
         ">
-      <a href="/vi/4-s3log/">
+      <a href="/internworkshop/vi/4-s3log/">
            <b> 4. </b> Quản lý session logs
           
             <i class="fas fa-check read-icon"></i>
@@ -547,12 +547,12 @@
  
   
     
-    <li data-nav-id="/vi/4-s3log/4.1-updateiamrole/" title="Cập nhật IAM Role" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/4-s3log/4.1-updateiamrole/" title="Cập nhật IAM Role" class="dd-item 
         
         
         
         ">
-      <a href="/vi/4-s3log/4.1-updateiamrole/">
+      <a href="/internworkshop/vi/4-s3log/4.1-updateiamrole/">
            <b> 4.1 </b> Cập nhật IAM Role
           
             <i class="fas fa-check read-icon"></i>
@@ -575,12 +575,12 @@
  
   
     
-    <li data-nav-id="/vi/4-s3log/4.2-creates3bucket/" title="Tạo S3 Bucket" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/4-s3log/4.2-creates3bucket/" title="Tạo S3 Bucket" class="dd-item 
         
         
         
         ">
-      <a href="/vi/4-s3log/4.2-creates3bucket/">
+      <a href="/internworkshop/vi/4-s3log/4.2-creates3bucket/">
            <b> 4.2 </b> Tạo S3 Bucket
           
             <i class="fas fa-check read-icon"></i>
@@ -603,12 +603,12 @@
  
   
     
-    <li data-nav-id="/vi/4-s3log/4.3-creategwes3/" title="Tạo S3 Gateway endpoint" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/4-s3log/4.3-creategwes3/" title="Tạo S3 Gateway endpoint" class="dd-item 
         
         
         
         ">
-      <a href="/vi/4-s3log/4.3-creategwes3/">
+      <a href="/internworkshop/vi/4-s3log/4.3-creategwes3/">
            <b> 4.3 </b> Tạo S3 Gateway endpoint
           
             <i class="fas fa-check read-icon"></i>
@@ -631,12 +631,12 @@
  
   
     
-    <li data-nav-id="/vi/4-s3log/4.4-configsessionlogs/" title="Theo dõi session logs" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/4-s3log/4.4-configsessionlogs/" title="Theo dõi session logs" class="dd-item 
         
         
         
         ">
-      <a href="/vi/4-s3log/4.4-configsessionlogs/">
+      <a href="/internworkshop/vi/4-s3log/4.4-configsessionlogs/">
            <b> 4.4 </b> Theo dõi session logs
           
             <i class="fas fa-check read-icon"></i>
@@ -666,12 +666,12 @@
  
   
     
-    <li data-nav-id="/vi/5-portfwd/" title="Port Forwarding" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/5-portfwd/" title="Port Forwarding" class="dd-item 
         
         
         
         ">
-      <a href="/vi/5-portfwd/">
+      <a href="/internworkshop/vi/5-portfwd/">
            <b> 5. </b> Port Forwarding
           
             <i class="fas fa-check read-icon"></i>
@@ -692,12 +692,12 @@
  
   
     
-    <li data-nav-id="/vi/6-cleanup/" title="Dọn dẹp tài nguyên  " class="dd-item 
+    <li data-nav-id="/internworkshop/vi/6-cleanup/" title="Dọn dẹp tài nguyên  " class="dd-item 
         
         
         
         ">
-      <a href="/vi/6-cleanup/">
+      <a href="/internworkshop/vi/6-cleanup/">
           <b>6. </b>Dọn dẹp tài nguyên  
           
             <i class="fas fa-check read-icon"></i>
@@ -745,7 +745,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/2-prerequiste/2.3-createapigatway/">English</option>
+                      <option id="en" value="http://localhost:1313/internworkshop/2-prerequiste/2.3-createapigatway/">English</option>
                     
                   
               
@@ -759,7 +759,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/2-prerequiste/2.3-createapigatway/" selected>Tiếng Việt</option>
+                      <option id="vi" value="http://localhost:1313/internworkshop/vi/2-prerequiste/2.3-createapigatway/" selected>Tiếng Việt</option>
                     
                   
               
@@ -849,7 +849,7 @@
             
           
           
-            <a href='/vi/'>API-First Development</a> > <a href='/vi/2-prerequiste/'>Các bước chuẩn bị</a> > Tạo API Gateway
+            <a href='/internworkshop/vi/'>API-First Development</a> > <a href='/internworkshop/vi/2-prerequiste/'>Các bước chuẩn bị</a> > Tạo API Gateway
           
         
           
@@ -1383,10 +1383,10 @@ Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu P
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-prerequiste/2.2-createlambda/" title="Tạo Lambda Function"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/internworkshop/vi/2-prerequiste/2.2-createlambda/" title="Tạo Lambda Function"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/3-accessibilitytoinstances/" title="Tạo kết nối đến máy chủ EC2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/internworkshop/vi/3-accessibilitytoinstances/" title="Tạo kết nối đến máy chủ EC2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1396,19 +1396,19 @@ Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu P
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1752657889"></script>
-    <script src="/js/perfect-scrollbar.min.js?1752657889"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1752657889"></script>
-    <script src="/js/jquery.sticky.js?1752657889"></script>
-    <script src="/js/featherlight.min.js?1752657889"></script>
-    <script src="/js/highlight.pack.js?1752657889"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1752659559"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752659559"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752659559"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1752659559"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1752659559"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1752659559"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1752657889"></script>
-    <script src="/js/learn.js?1752657889"></script>
-    <script src="/js/hugo-learn.js?1752657889"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752659559"></script>
+    <script src="/internworkshop/js/learn.js?1752659559"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1752659559"></script>
 
-    <link href="/mermaid/mermaid.css?1752657889" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1752657889"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1752659559" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1752659559"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

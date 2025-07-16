@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
-<meta name="author" content="journeyoftheaverageguy@gmail.com">
+<meta name="author" content="hoangnguyen.lau@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Preparation  :: AWS System Manager</title>
+    <title>Preparation :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1752132337" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1752132337" rel="stylesheet">
-    <link href="/css/hybrid.css?1752132337" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1752132337" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1752132337" rel="stylesheet">
-    <link href="/css/auto-complete.css?1752132337" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1752132337" rel="stylesheet">
-    <link href="/css/theme.css?1752132337" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1752132337" rel="stylesheet">
+    <link href="/css/nucleus.css?1752657889" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752657889" rel="stylesheet">
+    <link href="/css/hybrid.css?1752657889" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752657889" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752657889" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752657889" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752657889" rel="stylesheet">
+    <link href="/css/theme.css?1752657889" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752657889" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1752132337" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1752657889" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1752132337"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752657889"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1752132337"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1752132337"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752657889"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752657889"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1752132337"></script>
+<script type="text/javascript" src="/js/search.js?1752657889"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation" class="dd-item 
         
         active
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,44 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-createec2/" title="Preparing VPC and EC2" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-createdynamodb/" title="Prepare DynamoDB Table" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.1-createec2/">
-           <b> 2.1 </b> Preparing VPC and EC2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.1-createvpc/" title="Create VPC" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.1-createec2/2.1.1-createvpc/">
-           <b> 2.1.1 </b> Create VPC
+      <a href="/2-prerequiste/2.1-createdynamodb/">
+           <b> 2.1 </b> Prepare DynamoDB Table
           
             <i class="fas fa-check read-icon"></i>
           
@@ -198,13 +167,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/" title="Create Public Subnet" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-createlambda/" title="Create Lambda Function" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/">
-           <b> 2.1.2 </b> Create Public Subnet
+      <a href="/2-prerequiste/2.2-createlambda/">
+           <b> 2.2 </b> Create Lambda Function
           
             <i class="fas fa-check read-icon"></i>
           
@@ -226,134 +195,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/" title="Create Private Subnet" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.3-createapigatway/" title="Create API Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/">
-           <b> 2.1.3 </b> Create Private Subnet
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/" title="Create security groups" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/">
-           <b> 2.1.4 </b> Create security groups
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/" title="Create Public instance" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/">
-           <b> 2.1.5 </b> Create Public instance
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/" title="Create Private Instance" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/">
-           <b> 2.1.6 </b> Create Private Instance
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.2-createiamrole/">
-           <b> 2.2 </b> Create IAM Role
+      <a href="/2-prerequiste/2.3-createapigatway/">
+           <b> 2.3 </b> Create API Gateway
           
             <i class="fas fa-check read-icon"></i>
           
@@ -997,7 +845,7 @@
             
           
           
-            <a href='/'>API-First Development</a> > Preparation 
+            <a href='/'>API-First Development</a> > Preparation
           
         
           
@@ -1010,7 +858,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#simple-architecture">Simple Architecture</a>
       <ul>
         <li><a href="#content">Content</a></li>
       </ul>
@@ -1032,7 +880,7 @@
           
             <h1>
               
-              Preparation 
+              Preparation
             </h1>
           
 
@@ -1041,19 +889,21 @@
 
 
 	
-<div class="notices info" ><p>You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.</p>
+<div class="notices info" ><p>You need to create a DynamoDB table, a Lambda function, and an API Gateway to complete this hands-on lab.</p>
 </div>
 
-<p>To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:</p>
+<h2 id="simple-architecture">Simple Architecture</h2>
 <ul>
-<li><a href="https://000004.awsstudygroup.com/en/">About Amazon EC2</a></li>
-<li><a href="https://000003.awsstudygroup.com/en/">Works with Amazon VPC</a></li>
+<li><strong>DynamoDB</strong>: Store user data</li>
+<li><strong>Lambda Function</strong>: Handle CRUD operations</li>
+<li><strong>API Gateway</strong>: REST API endpoints</li>
 </ul>
-<p>In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.</p>
+<p>Below are the steps to create DynamoDB, Lambda, and API Gateway</p>
 <h3 id="content">Content</h3>
 <ul>
-<li><a href="/2-prerequiste/2.1-createec2/">Prepare VPC and EC2</a></li>
-<li><a href="/2-prerequiste/2.2-createiamrole/">Create IAM Role</a></li>
+<li><a href="/2-prerequiste/2.1-createdynamodb/">Create DynamoDB Table</a></li>
+<li><a href="/2-prerequiste/2.2-createlambda/">Create Lambda Function</a></li>
+<li><a href="/2-prerequiste/2.3-createapigatway/">Create API Gateway</a></li>
 </ul>
 
 
@@ -1138,21 +988,6 @@
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1171,73 +1006,6 @@
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1537,7 +1305,7 @@
 			<a class="nav nav-prev" href="/1-introduce/" title="Introduction"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-prerequiste/2.1-createec2/" title="Preparing VPC and EC2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/2-prerequiste/2.1-createdynamodb/" title="Prepare DynamoDB Table" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1547,19 +1315,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1752132337"></script>
-    <script src="/js/perfect-scrollbar.min.js?1752132337"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1752132337"></script>
-    <script src="/js/jquery.sticky.js?1752132337"></script>
-    <script src="/js/featherlight.min.js?1752132337"></script>
-    <script src="/js/highlight.pack.js?1752132337"></script>
+    <script src="/js/clipboard.min.js?1752657889"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752657889"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752657889"></script>
+    <script src="/js/jquery.sticky.js?1752657889"></script>
+    <script src="/js/featherlight.min.js?1752657889"></script>
+    <script src="/js/highlight.pack.js?1752657889"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1752132337"></script>
-    <script src="/js/learn.js?1752132337"></script>
-    <script src="/js/hugo-learn.js?1752132337"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752657889"></script>
+    <script src="/js/learn.js?1752657889"></script>
+    <script src="/js/hugo-learn.js?1752657889"></script>
 
-    <link href="/mermaid/mermaid.css?1752132337" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1752132337"></script>
+    <link href="/mermaid/mermaid.css?1752657889" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1752657889"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

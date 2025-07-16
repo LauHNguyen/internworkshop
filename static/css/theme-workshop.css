@@ -182,11 +182,19 @@ h1, h2, h3, h4, h5 {
 }
 
 .hljs {
-  background-color: none; 
+  background-color: #f8f8f8 !important;
+  color: #333 !important;
 }
 
 pre {
-  background-color: var(--MENU-SECTIONS-BG-color) !important;
+  background-color: #f8f8f8 !important;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+pre code {
+  background-color: transparent !important;
 }
 
 div.notices.info p {

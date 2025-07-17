@@ -19,10 +19,10 @@ Các bước bạn cần hoàn tất bước này sẽ như sau:
 5. Nhấn **Create function**
 
 Vào **Lambda Console**: Truy cập vào AWS Management Console và tìm kiếm Lambda.
-![Search](images/2.prerequisite/SearchLambda.png)
+![Search](SearchLambda.png)
 
 Nhấn **Create function**: Tại trang Lambda, bạn sẽ thấy nút "Create function" ở góc trên bên phải.
-![Create Function](images/2.prerequisite/CreateFunction.png)
+![Create Function](CreateFunction.png)
 
 Điền thông tin function: Nhập tên function là `UserService`, chọn Runtime là `Node.js 18.x`. Các thông số khác có thể để mặc định. Cuối cùng, nhấn **Create function** để hoàn tất.
 
@@ -35,10 +35,10 @@ Và vì trước đó mình đã tạo 1 lambda function với tên là `UserSer
 Ngoài thông tin về tên và runtime, bạn có thể để các thông số khác mặc định. Sau khi nhấn **Create function**, Lambda sẽ tạo function cho bạn. Role IAM sẽ được tạo tự động để cho phép Lambda truy cập vào các dịch vụ AWS khác như DynamoDB.
 
 Nhấn **Create function**: Sau khi điền đầy đủ thông tin, nhấn nút "Create function" để hoàn tất việc tạo Lambda function.
-![Function Info](images/2.prerequisite/FunctionInfo.png)
+![Function Info](FunctionInfo.png)
 
 Sau khi tạo function, bạn sẽ thấy trang quản lý của Lambda function `UserService`. Tại đây, bạn có thể cấu hình các thông số khác như quyền truy cập, biến môi trường, và mã nguồn của function.
-![Function Created](images/2.prerequisite/FunctionCreated.png)
+![Function Created](FunctionCreated.png)
 
 ### 2: Tải mã nguồn cho Lambda Function
 Bây giờ chúng ta sẽ tải mã nguồn cho Lambda function `UserService`. Mã nguồn này sẽ bao gồm các hàm để xử lý các yêu cầu CRUD từ API Gateway và tương tác với DynamoDB.
@@ -219,7 +219,7 @@ khi bạn vừa thêm mã nguồn mới, Lambda sẽ thông báo rằng mã ngu�
 Đảm bảo file mã nguồn này được lưu với tên `index.js` trong thư mục gốc của Lambda function. Lambda sẽ tự động sử dụng file này làm entry point cho function.
 {{% /notice %}}
 3. Nhấn **Deploy** để lưu thay đổi.
-![Code Editor](images/2.prerequisite/CodeEditor.png)
+![Code Editor](CodeEditor.png)
 
 Ở bước này mình thêm /v1/users vào đầu các đường dẫn để dễ dàng quản lý và mở rộng API trong tương lai. Bạn có thể thay đổi đường dẫn này nếu muốn, nhưng hãy nhớ cập nhật lại trong mã nguồn và cấu hình API Gateway sau này.
 
@@ -227,13 +227,13 @@ khi bạn vừa thêm mã nguồn mới, Lambda sẽ thông báo rằng mã ngu�
 Để Lambda function có thể truy cập vào bảng DynamoDB, chúng ta cần cấp quyền truy cập cho Lambda function này. Điều này được thực hiện thông qua IAM Role mà Lambda function sử dụng.
 1. Trong trang quản lý Lambda function `UserService`, vào tag "Configuration", vào tag "Permissions", cuộn xuống phần "Execution role".
 2. Nhấn vào liên kết IAM role ở phần "role name" để mở trang quản lý IAM role.
-![Execution Role](images/2.prerequisite/ExecutionRole.png)
+![Execution Role](ExecutionRole.png)
 
 3. Trong trang IAM role, nhấn **Add permissions** và chọn **Attach policies**.
-![Attach Policy](images/2.prerequisite/AttachPolicy1.png)
+![Attach Policy](AttachPolicy1.png)
 4. Tìm kiếm và chọn chính sách `AmazonDynamoDBFullAccess` để cấp quyền truy cập đầy đủ vào DynamoDB. Bạn cũng có thể tạo một chính sách tùy chỉnh nếu muốn giới hạn quyền truy cập.
-![Attach Policy](images/2.prerequisite/AttachPolicy2.png)
+![Attach Policy](AttachPolicy2.png)
 5. Nhấn **Attach policy** để áp dụng chính sách này cho IAM role của Lambda function.
-![Policy Attached](images/2.prerequisite/PolicyAttached1.png)
+![Policy Attached](PolicyAttached1.png)
 6. Quay lại trang quản lý Lambda function, bạn sẽ thấy IAM role đã được cập nhật với chính sách mới.
-![Policy Attached](images/2.prerequisite/PolicyAttached2.png)
+![Policy Attached](PolicyAttached2.png)

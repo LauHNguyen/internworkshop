@@ -21,31 +21,31 @@ Các bước bạn cần hoàn tất bước này sẽ như sau:
 5. Nhấn **Create API** để hoàn tất việc tạo API Gateway. 
 
 Vào **API Gateway Console**: Truy cập vào AWS Management Console và tìm kiếm API Gateway.
-![Search](images/2.prerequisite/SearchAPIGateway.png)
+![Search](SearchAPIGateway.png)
 Nhấn **Create API**: Tại trang API Gateway, bạn sẽ thấy nút "Create API" ở góc trên bên phải.
-![Create API](images/2.prerequisite/CreateAPI.png)
+![Create API](CreateAPI.png)
 Chọn **REST API**: Chọn tùy chọn "REST API" và nhấn nút "Build" để bắt đầu tạo API.
-![Select REST API](images/2.prerequisite/SelectRESTAPI.png)
+![Select REST API](SelectRESTAPI.png)
 Chọn **New API**: Chọn tùy chọn "New API" để tạo một API mới.
 Điền thông tin API: Nhập tên API là `UserServiceAPI`, mô tả là `API for User Service`, và chọn loại endpoint là `Regional`. Các thông số khác có thể để mặc định. Cuối cùng, nhấn **Create API** để hoàn tất.
-![API Info](images/2.prerequisite/APIInfo.png)
+![API Info](APIInfo.png)
 
 ### Tạo Resource và Method cho API
 
 Sau khi tạo API, bạn sẽ thấy trang quản lý của API Gateway `UserServiceAPI`. Tại đây, bạn có thể cấu hình các endpoint, phương thức HTTP, và tích hợp với Lambda function.
 Chọn **Create Resource**: Để tạo một resource cho API, bạn cần nhấn nút "Create Resource" trong trang quản lý API.
-![Create Resource](images/2.prerequisite/CreateResource.png)
+![Create Resource](CreateResource.png)
 Vì chúng ta sẽ tạo một resource cho người dùng, nên bạn có thể đặt tên resource là `users` hoặc `v1/users` để phân biệt với các phiên bản API khác trong tương lai.
 Ở đây, mình sẽ tạo resource là `v1/users` để phù hợp với phiên bản API.
 Đầu tiên, bạn cần tạo một resource chính cho API. Resource này sẽ là điểm gốc cho các endpoint của API.
 
 Điền thông tin resource: Nhập tên resource là `v1` và nhấn **Create Resource** để tạo resource này.
-![Create Resource](images/2.prerequisite/CreateResource1.png)
+![Create Resource](CreateResource1.png)
 Tương tự như v1 ta sẽ tạo một resource con là `users` trong resource `v1`.
-![Create Resource](images/2.prerequisite/CreateResource2.png)
+![Create Resource](CreateResource2.png)
 
 Chọn **Create Method**: Sau khi tạo resource `v1/users`, bạn cần tạo các phương thức HTTP cho resource này. Nhấn nút "Create Method" để bắt đầu.
-![Create Method](images/2.prerequisite/CreateMethod.png)
+![Create Method](CreateMethod.png)
 Chọn phương thức HTTP: Chọn phương thức HTTP mà bạn muốn tạo cho resource `v1/users`. Ví dụ, bạn có thể chọn `GET`, `POST`, `PUT`, và `DELETE` để thực hiện các thao tác CRUD.
 Ở đây mình sẽ tạo các phương thức `GET`, `POST` cho resource `v1/users`.
 **Method type**: Chọn loại phương thức HTTP mà bạn muốn tạo. Ví dụ, nếu bạn muốn tạo phương thức `GET`, hãy chọn `GET` từ danh sách.
@@ -55,7 +55,7 @@ Chọn phương thức HTTP: Chọn phương thức HTTP mà bạn muốn tạo 
 Các bạn có thể chọn `Lambda Function` cho tất cả các phương thức CRUD.
 Các phần còn lại bạn có thể để mặc định.
 Nhấn **Create Method** để hoàn tất việc tạo phương thức.
-![Select Method](images/2.prerequisite/SelectMethod.png)
+![Select Method](SelectMethod.png)
 
 Ta sẽ tạo thêm resource `v1/users/{userID}` để lấy thông tin chi tiết của một người dùng cụ thể.
 Tương tự như trên, bạn có thể tạo resource `v1/users/{userID}` bằng cách chọn `Create Resource`, nhập path là `/v1/users/` và nhập tên resource là `{userID}`.
@@ -67,18 +67,18 @@ Tương tự như trên, bạn có thể tạo resource `v1/users/{userID}` bằ
 - **PUT /v1/users/{userID}**: Cập nhật thông tin của một người dùng cụ thể.
 - **DELETE /v1/users/{userID}**: Xóa một người dùng cụ thể.
 
-![API Method](images/2.prerequisite/APIMethod.png)
+![API Method](APIMethod.png)
 
 ### Deploy API
 Sau khi đã tạo các resource và phương thức cho API, bạn cần deploy API để có thể sử dụng được. Việc deploy sẽ tạo ra một endpoint mà bạn có thể gọi từ bên ngoài.
 Chọn **Deploy API**: Nhấn nút "Deploy API" trong trang quản lý API.
-![Deploy API](images/2.prerequisite/DeployAPI.png)
+![Deploy API](DeployAPI.png)
 Chọn **Deployment stage**: Chọn hoặc tạo một stage để deploy API. Bạn có thể tạo một stage mới với tên là `dev` hoặc sử dụng stage mặc định.
-![Select Stage](images/2.prerequisite/SelectStage.png)
+![Select Stage](SelectStage.png)
 Điền thông tin stage: Nhập tên stage là `dev` và nhấn **Deploy** để hoàn tất việc deploy API.
-![Deploy Stage](images/2.prerequisite/DeployStage.png)
+![Deploy Stage](DeployStage.png)
 Sau khi deploy, bạn sẽ nhận được một URL endpoint cho API. Đây là địa chỉ mà bạn có thể sử dụng để gọi các phương thức của API.
-![API Endpoint](images/2.prerequisite/APIEndpoint.png)
+![API Endpoint](APIEndpoint.png)
 
 ### Kiểm tra API
 
@@ -86,7 +86,7 @@ Trước khi kiểm tra API, bạn cần đảm bảo rằng Lambda function đ�
 
 Quay lại Lambda function tab "Configuration", chọn tab "Permissions" và cuộn xuống phần "resource-based policy".
 Ở đây bạn sẽ thấy các quyền mà Lambda function đã được cấp tương ứng với các methods mà bạn đã tạo trong API Gateway.
-![Lambda Permissions](images/2.prerequisite/LambdaPermission.png)
+![Lambda Permissions](LambdaPermission.png)
 
 Bạn có thể kiểm tra API bằng cách sử dụng Postman hoặc curl để gửi các yêu cầu đến các endpoint mà bạn đã tạo.
 Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu POST với dữ liệu người dùng trong body.
@@ -98,10 +98,10 @@ Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu P
     "address": "123 Main St"
 }
 ```
-![Postman Request](images/2.prerequisite/PostmanRequest1.png)
+![Postman Request](PostmanRequest1.png)
 
 Hoặc để lấy danh sách tất cả người dùng, bạn có thể gửi một yêu cầu GET đến URL endpoint `/v1/users`.
-![Postman Request](images/2.prerequisite/PostmanRequest2.png)
+![Postman Request](PostmanRequest2.png)
 
 Vậy chúng ta đã hoàn thành việc tạo API Gateway và cấu hình các phương thức để tương tác với Lambda function và DynamoDB. Bây giờ bạn có thể sử dụng API này để thực hiện các thao tác CRUD trên bảng `Users` trong DynamoDB thông qua Lambda function `UserService`.
 

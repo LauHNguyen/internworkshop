@@ -20,13 +20,13 @@ Các bước bạn cần hoàn tất bước này sẽ như sau:
 
 
 Vào **DynamoDB Console**: Truy cập vào AWS Management Console và tìm kiếm DynamoDB.
-![Search](images/2.prerequisite/SearchDynamoDB.png)
+![Search](SearchDynamoDB.png)
 
 Nhấn **Create table**: Tại trang DynamoDB, bạn sẽ thấy nút "Create table" ở góc trên bên phải.
-![Create Table](images/2.prerequisite/CreateTable.png)
+![Create Table](CreateTable.png)
 
 Điền thông tin bảng: Nhập tên bảng là `Users` và Partition key là `userID` với kiểu dữ liệu là String. Các thông số khác có thể để mặc định. Cuối cùng, nhấn **Create table** để hoàn tất.
-![Table Info](images/2.prerequisite/TableInfo.png)
+![Table Info](TableInfo.png)
 
 Sau khi tạo bảng, bạn sẽ thấy bảng `Users` trong danh sách các bảng DynamoDB của bạn. Bạn có thể nhấn vào tên bảng để xem chi tiết và quản lý dữ liệu trong bảng này.
-![Table Created](images/2.prerequisite/TableCreated.png)
+![Table Created](TableCreated.png)

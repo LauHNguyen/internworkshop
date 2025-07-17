@@ -12,21 +12,21 @@
     <title>Create API Gateway :: AWS System Manager</title>
 
     
-    <link href="/internworkshop/css/nucleus.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/fontawesome-all.min.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/hybrid.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/featherlight.min.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/auto-complete.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/theme.css?1752737468" rel="stylesheet">
-    <link href="/internworkshop/css/hugo-theme.css?1752737468" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1752739176" rel="stylesheet">
     
-    <link href="/internworkshop/css/theme-workshop.css?1752737468" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1752739176" rel="stylesheet">
     
     
 
-    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752737468"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752739176"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752737468"></script>
-<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752737468"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752739176"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752739176"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/internworkshop\/";
     
 </script>
-<script type="text/javascript" src="/internworkshop/js/search.js?1752737468"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1752739176"></script>
 
     
   </div>
@@ -913,27 +913,27 @@
 <li>Click <strong>Create API</strong> to complete creating the API Gateway.</li>
 </ol>
 <p>Go to <strong>API Gateway Console</strong>: Access the AWS Management Console and search for API Gateway.
-<img src="images/2.prerequisite/SearchAPIGateway.png" alt="Search">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SearchAPIGateway.png" alt="Search">
 Click <strong>Create API</strong>: On the API Gateway page, you will see the &ldquo;Create API&rdquo; button in the upper right corner.
-<img src="images/2.prerequisite/CreateAPI.png" alt="Create API">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateAPI.png" alt="Create API">
 Select <strong>REST API</strong>: Select the &ldquo;REST API&rdquo; option and click the &ldquo;Build&rdquo; button to start creating the API.
-<img src="images/2.prerequisite/SelectRESTAPI.png" alt="Select REST API">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SelectRESTAPI.png" alt="Select REST API">
 Select <strong>New API</strong>: Select the &ldquo;New API&rdquo; option to create a new API.
 Fill in API information: Enter the API name as <code>UserServiceAPI</code>, description as <code>API for User Service</code>, and select endpoint type as <code>Regional</code>. Other parameters can be left as default. Finally, click <strong>Create API</strong> to complete.
-<img src="images/2.prerequisite/APIInfo.png" alt="API Info"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/APIInfo.png" alt="API Info"></p>
 <h3 id="create-resource-and-method-for-api">Create Resource and Method for API</h3>
 <p>After creating the API, you will see the management page of API Gateway <code>UserServiceAPI</code>. Here, you can configure endpoints, HTTP methods, and integration with Lambda function.
 Select <strong>Create Resource</strong>: To create a resource for the API, you need to click the &ldquo;Create Resource&rdquo; button in the API management page.
-<img src="images/2.prerequisite/CreateResource.png" alt="Create Resource">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateResource.png" alt="Create Resource">
 Since we will create a resource for users, you can name the resource <code>users</code> or <code>v1/users</code> to distinguish from other API versions in the future.
 Here, I will create a resource as <code>v1/users</code> to match the API version.
 First, you need to create a main resource for the API. This resource will be the root point for the API endpoints.</p>
 <p>Fill in resource information: Enter the resource name as <code>v1</code> and click <strong>Create Resource</strong> to create this resource.
-<img src="images/2.prerequisite/CreateResource1.png" alt="Create Resource">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateResource1.png" alt="Create Resource">
 Similar to v1, we will create a child resource called <code>users</code> within the <code>v1</code> resource.
-<img src="images/2.prerequisite/CreateResource2.png" alt="Create Resource"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateResource2.png" alt="Create Resource"></p>
 <p>Select <strong>Create Method</strong>: After creating the <code>v1/users</code> resource, you need to create HTTP methods for this resource. Click the &ldquo;Create Method&rdquo; button to start.
-<img src="images/2.prerequisite/CreateMethod.png" alt="Create Method">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateMethod.png" alt="Create Method">
 Select HTTP method: Choose the HTTP method you want to create for the <code>v1/users</code> resource. For example, you can choose <code>GET</code>, <code>POST</code>, <code>PUT</code>, and <code>DELETE</code> to perform CRUD operations.
 Here I will create <code>GET</code>, <code>POST</code> methods for the <code>v1/users</code> resource.
 <strong>Method type</strong>: Select the type of HTTP method you want to create. For example, if you want to create a <code>GET</code> method, select <code>GET</code> from the list.
@@ -943,7 +943,7 @@ Here I will create <code>GET</code>, <code>POST</code> methods for the <code>v1/
 You can select <code>Lambda Function</code> for all CRUD methods.
 You can leave the rest as default.
 Click <strong>Create Method</strong> to complete creating the method.
-<img src="images/2.prerequisite/SelectMethod.png" alt="Select Method"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SelectMethod.png" alt="Select Method"></p>
 <p>We will create an additional resource <code>v1/users/{userID}</code> to get detailed information of a specific user.
 Similar to above, you can create the resource <code>v1/users/{userID}</code> by selecting <code>Create Resource</code>, entering the path as <code>/v1/users/</code> and entering the resource name as <code>{userID}</code>.</p>
 <p>Here are the methods you will create for resources <code>v1/users</code> and <code>v1/users/{userID}</code>:</p>
@@ -954,22 +954,22 @@ Similar to above, you can create the resource <code>v1/users/{userID}</code> by 
 <li><strong>PUT /v1/users/{userID}</strong>: Update information of a specific user.</li>
 <li><strong>DELETE /v1/users/{userID}</strong>: Delete a specific user.</li>
 </ul>
-<p><img src="images/2.prerequisite/APIMethod.png" alt="API Method"></p>
+<p><img src="/internworkshop/2-prerequiste/2.3-createapigatway/APIMethod.png" alt="API Method"></p>
 <h3 id="deploy-api">Deploy API</h3>
 <p>After creating resources and methods for the API, you need to deploy the API to be able to use it. Deployment will create an endpoint that you can call from outside.
 Select <strong>Deploy API</strong>: Click the &ldquo;Deploy API&rdquo; button in the API management page.
-<img src="images/2.prerequisite/DeployAPI.png" alt="Deploy API">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/DeployAPI.png" alt="Deploy API">
 Select <strong>Deployment stage</strong>: Select or create a stage to deploy the API. You can create a new stage named <code>dev</code> or use the default stage.
-<img src="images/2.prerequisite/SelectStage.png" alt="Select Stage">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SelectStage.png" alt="Select Stage">
 Fill in stage information: Enter the stage name as <code>dev</code> and click <strong>Deploy</strong> to complete deploying the API.
-<img src="images/2.prerequisite/DeployStage.png" alt="Deploy Stage">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/DeployStage.png" alt="Deploy Stage">
 After deployment, you will receive a URL endpoint for the API. This is the address you can use to call the API methods.
-<img src="images/2.prerequisite/APIEndpoint.png" alt="API Endpoint"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/APIEndpoint.png" alt="API Endpoint"></p>
 <h3 id="test-api">Test API</h3>
 <p>Before testing the API, you need to ensure that the Lambda function is configured correctly and has access to DynamoDB. You can check the IAM permissions of the Lambda function to ensure it has read and write permissions to the DynamoDB <code>Users</code> table.</p>
 <p>Return to the Lambda function &ldquo;Configuration&rdquo; tab, select the &ldquo;Permissions&rdquo; tab and scroll down to the &ldquo;resource-based policy&rdquo; section.
 Here you will see the permissions that the Lambda function has been granted corresponding to the methods you created in API Gateway.
-<img src="images/2.prerequisite/LambdaPermission.png" alt="Lambda Permissions"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/LambdaPermission.png" alt="Lambda Permissions"></p>
 <p>You can test the API using Postman or curl to send requests to the endpoints you created.
 For example, add a new user by sending a POST request with user data in the body.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
@@ -978,9 +978,9 @@ For example, add a new user by sending a POST request with user data in the body
 </span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;email&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;john.doe@example.com&#34;</span><span style="color:#1f2328">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;address&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;123 Main St&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p><img src="images/2.prerequisite/PostmanRequest1.png" alt="Postman Request"></p>
+</span></span></code></pre></div><p><img src="/internworkshop/2-prerequiste/2.3-createapigatway/PostmanRequest1.png" alt="Postman Request"></p>
 <p>Or to get a list of all users, you can send a GET request to the URL endpoint <code>/v1/users</code>.
-<img src="images/2.prerequisite/PostmanRequest2.png" alt="Postman Request"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/PostmanRequest2.png" alt="Postman Request"></p>
 <p>So we have completed creating API Gateway and configuring methods to interact with Lambda function and DynamoDB. Now you can use this API to perform CRUD operations on the <code>Users</code> table in DynamoDB through the Lambda function <code>UserService</code>.</p>
 
 
@@ -1396,19 +1396,19 @@ For example, add a new user by sending a POST request with user data in the body
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/internworkshop/js/clipboard.min.js?1752737468"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752737468"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752737468"></script>
-    <script src="/internworkshop/js/jquery.sticky.js?1752737468"></script>
-    <script src="/internworkshop/js/featherlight.min.js?1752737468"></script>
-    <script src="/internworkshop/js/highlight.pack.js?1752737468"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1752739176"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752739176"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752739176"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1752739176"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1752739176"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1752739176"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752737468"></script>
-    <script src="/internworkshop/js/learn.js?1752737468"></script>
-    <script src="/internworkshop/js/hugo-learn.js?1752737468"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752739176"></script>
+    <script src="/internworkshop/js/learn.js?1752739176"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1752739176"></script>
 
-    <link href="/internworkshop/mermaid/mermaid.css?1752737468" rel="stylesheet" />
-    <script src="/internworkshop/mermaid/mermaid.js?1752737468"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1752739176" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1752739176"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

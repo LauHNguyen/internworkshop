@@ -12,21 +12,21 @@
     <title>Tạo API Gateway :: AWS System Manager</title>
 
     
-    <link href="/internworkshop/css/nucleus.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/fontawesome-all.min.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/hybrid.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/featherlight.min.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/auto-complete.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/theme.css?1752737469" rel="stylesheet">
-    <link href="/internworkshop/css/hugo-theme.css?1752737469" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1752739176" rel="stylesheet">
     
-    <link href="/internworkshop/css/theme-workshop.css?1752737469" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1752739176" rel="stylesheet">
     
     
 
-    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752737469"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752739176"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752737469"></script>
-<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752737469"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752739176"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752739176"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/internworkshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/internworkshop/js/search.js?1752737469"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1752739176"></script>
 
     
   </div>
@@ -913,27 +913,27 @@
 <li>Nhấn <strong>Create API</strong> để hoàn tất việc tạo API Gateway.</li>
 </ol>
 <p>Vào <strong>API Gateway Console</strong>: Truy cập vào AWS Management Console và tìm kiếm API Gateway.
-<img src="images/2.prerequisite/SearchAPIGateway.png" alt="Search">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SearchAPIGateway.png" alt="Search">
 Nhấn <strong>Create API</strong>: Tại trang API Gateway, bạn sẽ thấy nút &ldquo;Create API&rdquo; ở góc trên bên phải.
-<img src="images/2.prerequisite/CreateAPI.png" alt="Create API">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateAPI.png" alt="Create API">
 Chọn <strong>REST API</strong>: Chọn tùy chọn &ldquo;REST API&rdquo; và nhấn nút &ldquo;Build&rdquo; để bắt đầu tạo API.
-<img src="images/2.prerequisite/SelectRESTAPI.png" alt="Select REST API">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SelectRESTAPI.png" alt="Select REST API">
 Chọn <strong>New API</strong>: Chọn tùy chọn &ldquo;New API&rdquo; để tạo một API mới.
 Điền thông tin API: Nhập tên API là <code>UserServiceAPI</code>, mô tả là <code>API for User Service</code>, và chọn loại endpoint là <code>Regional</code>. Các thông số khác có thể để mặc định. Cuối cùng, nhấn <strong>Create API</strong> để hoàn tất.
-<img src="images/2.prerequisite/APIInfo.png" alt="API Info"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/APIInfo.png" alt="API Info"></p>
 <h3 id="tạo-resource-và-method-cho-api">Tạo Resource và Method cho API</h3>
 <p>Sau khi tạo API, bạn sẽ thấy trang quản lý của API Gateway <code>UserServiceAPI</code>. Tại đây, bạn có thể cấu hình các endpoint, phương thức HTTP, và tích hợp với Lambda function.
 Chọn <strong>Create Resource</strong>: Để tạo một resource cho API, bạn cần nhấn nút &ldquo;Create Resource&rdquo; trong trang quản lý API.
-<img src="images/2.prerequisite/CreateResource.png" alt="Create Resource">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateResource.png" alt="Create Resource">
 Vì chúng ta sẽ tạo một resource cho người dùng, nên bạn có thể đặt tên resource là <code>users</code> hoặc <code>v1/users</code> để phân biệt với các phiên bản API khác trong tương lai.
 Ở đây, mình sẽ tạo resource là <code>v1/users</code> để phù hợp với phiên bản API.
 Đầu tiên, bạn cần tạo một resource chính cho API. Resource này sẽ là điểm gốc cho các endpoint của API.</p>
 <p>Điền thông tin resource: Nhập tên resource là <code>v1</code> và nhấn <strong>Create Resource</strong> để tạo resource này.
-<img src="images/2.prerequisite/CreateResource1.png" alt="Create Resource">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateResource1.png" alt="Create Resource">
 Tương tự như v1 ta sẽ tạo một resource con là <code>users</code> trong resource <code>v1</code>.
-<img src="images/2.prerequisite/CreateResource2.png" alt="Create Resource"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateResource2.png" alt="Create Resource"></p>
 <p>Chọn <strong>Create Method</strong>: Sau khi tạo resource <code>v1/users</code>, bạn cần tạo các phương thức HTTP cho resource này. Nhấn nút &ldquo;Create Method&rdquo; để bắt đầu.
-<img src="images/2.prerequisite/CreateMethod.png" alt="Create Method">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/CreateMethod.png" alt="Create Method">
 Chọn phương thức HTTP: Chọn phương thức HTTP mà bạn muốn tạo cho resource <code>v1/users</code>. Ví dụ, bạn có thể chọn <code>GET</code>, <code>POST</code>, <code>PUT</code>, và <code>DELETE</code> để thực hiện các thao tác CRUD.
 Ở đây mình sẽ tạo các phương thức <code>GET</code>, <code>POST</code> cho resource <code>v1/users</code>.
 <strong>Method type</strong>: Chọn loại phương thức HTTP mà bạn muốn tạo. Ví dụ, nếu bạn muốn tạo phương thức <code>GET</code>, hãy chọn <code>GET</code> từ danh sách.
@@ -943,7 +943,7 @@ Chọn phương thức HTTP: Chọn phương thức HTTP mà bạn muốn tạo 
 Các bạn có thể chọn <code>Lambda Function</code> cho tất cả các phương thức CRUD.
 Các phần còn lại bạn có thể để mặc định.
 Nhấn <strong>Create Method</strong> để hoàn tất việc tạo phương thức.
-<img src="images/2.prerequisite/SelectMethod.png" alt="Select Method"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SelectMethod.png" alt="Select Method"></p>
 <p>Ta sẽ tạo thêm resource <code>v1/users/{userID}</code> để lấy thông tin chi tiết của một người dùng cụ thể.
 Tương tự như trên, bạn có thể tạo resource <code>v1/users/{userID}</code> bằng cách chọn <code>Create Resource</code>, nhập path là <code>/v1/users/</code> và nhập tên resource là <code>{userID}</code>.</p>
 <p>Đây là các phương thức mà bạn sẽ tạo cho resource <code>v1/users</code> và <code>v1/users/{userID}</code>:</p>
@@ -954,22 +954,22 @@ Tương tự như trên, bạn có thể tạo resource <code>v1/users/{userID}<
 <li><strong>PUT /v1/users/{userID}</strong>: Cập nhật thông tin của một người dùng cụ thể.</li>
 <li><strong>DELETE /v1/users/{userID}</strong>: Xóa một người dùng cụ thể.</li>
 </ul>
-<p><img src="images/2.prerequisite/APIMethod.png" alt="API Method"></p>
+<p><img src="/internworkshop/2-prerequiste/2.3-createapigatway/APIMethod.png" alt="API Method"></p>
 <h3 id="deploy-api">Deploy API</h3>
 <p>Sau khi đã tạo các resource và phương thức cho API, bạn cần deploy API để có thể sử dụng được. Việc deploy sẽ tạo ra một endpoint mà bạn có thể gọi từ bên ngoài.
 Chọn <strong>Deploy API</strong>: Nhấn nút &ldquo;Deploy API&rdquo; trong trang quản lý API.
-<img src="images/2.prerequisite/DeployAPI.png" alt="Deploy API">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/DeployAPI.png" alt="Deploy API">
 Chọn <strong>Deployment stage</strong>: Chọn hoặc tạo một stage để deploy API. Bạn có thể tạo một stage mới với tên là <code>dev</code> hoặc sử dụng stage mặc định.
-<img src="images/2.prerequisite/SelectStage.png" alt="Select Stage">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/SelectStage.png" alt="Select Stage">
 Điền thông tin stage: Nhập tên stage là <code>dev</code> và nhấn <strong>Deploy</strong> để hoàn tất việc deploy API.
-<img src="images/2.prerequisite/DeployStage.png" alt="Deploy Stage">
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/DeployStage.png" alt="Deploy Stage">
 Sau khi deploy, bạn sẽ nhận được một URL endpoint cho API. Đây là địa chỉ mà bạn có thể sử dụng để gọi các phương thức của API.
-<img src="images/2.prerequisite/APIEndpoint.png" alt="API Endpoint"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/APIEndpoint.png" alt="API Endpoint"></p>
 <h3 id="kiểm-tra-api">Kiểm tra API</h3>
 <p>Trước khi kiểm tra API, bạn cần đảm bảo rằng Lambda function đã được cấu hình đúng và có quyền truy cập vào DynamoDB. Bạn có thể kiểm tra quyền IAM của Lambda function để đảm bảo nó có quyền đọc và ghi vào bảng DynamoDB <code>Users</code>.</p>
 <p>Quay lại Lambda function tab &ldquo;Configuration&rdquo;, chọn tab &ldquo;Permissions&rdquo; và cuộn xuống phần &ldquo;resource-based policy&rdquo;.
 Ở đây bạn sẽ thấy các quyền mà Lambda function đã được cấp tương ứng với các methods mà bạn đã tạo trong API Gateway.
-<img src="images/2.prerequisite/LambdaPermission.png" alt="Lambda Permissions"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/LambdaPermission.png" alt="Lambda Permissions"></p>
 <p>Bạn có thể kiểm tra API bằng cách sử dụng Postman hoặc curl để gửi các yêu cầu đến các endpoint mà bạn đã tạo.
 Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu POST với dữ liệu người dùng trong body.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
@@ -978,9 +978,9 @@ Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu P
 </span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;email&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;john.doe@example.com&#34;</span><span style="color:#1f2328">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;address&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;123 Main St&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p><img src="images/2.prerequisite/PostmanRequest1.png" alt="Postman Request"></p>
+</span></span></code></pre></div><p><img src="/internworkshop/2-prerequiste/2.3-createapigatway/PostmanRequest1.png" alt="Postman Request"></p>
 <p>Hoặc để lấy danh sách tất cả người dùng, bạn có thể gửi một yêu cầu GET đến URL endpoint <code>/v1/users</code>.
-<img src="images/2.prerequisite/PostmanRequest2.png" alt="Postman Request"></p>
+<img src="/internworkshop/2-prerequiste/2.3-createapigatway/PostmanRequest2.png" alt="Postman Request"></p>
 <p>Vậy chúng ta đã hoàn thành việc tạo API Gateway và cấu hình các phương thức để tương tác với Lambda function và DynamoDB. Bây giờ bạn có thể sử dụng API này để thực hiện các thao tác CRUD trên bảng <code>Users</code> trong DynamoDB thông qua Lambda function <code>UserService</code>.</p>
 
 
@@ -1396,19 +1396,19 @@ Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu P
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/internworkshop/js/clipboard.min.js?1752737469"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752737469"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752737469"></script>
-    <script src="/internworkshop/js/jquery.sticky.js?1752737469"></script>
-    <script src="/internworkshop/js/featherlight.min.js?1752737469"></script>
-    <script src="/internworkshop/js/highlight.pack.js?1752737469"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1752739177"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752739177"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752739177"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1752739177"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1752739177"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1752739177"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752737469"></script>
-    <script src="/internworkshop/js/learn.js?1752737469"></script>
-    <script src="/internworkshop/js/hugo-learn.js?1752737469"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752739177"></script>
+    <script src="/internworkshop/js/learn.js?1752739177"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1752739177"></script>
 
-    <link href="/internworkshop/mermaid/mermaid.css?1752737469" rel="stylesheet" />
-    <script src="/internworkshop/mermaid/mermaid.js?1752737469"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1752739177" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1752739177"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

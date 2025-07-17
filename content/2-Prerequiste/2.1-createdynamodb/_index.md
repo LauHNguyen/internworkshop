@@ -20,13 +20,13 @@ The steps you need to complete for this step are as follows:
 
 
 Go to **DynamoDB Console**: Access the AWS Management Console and search for DynamoDB.
-![Search](/images/2.prerequisite/SearchDynamoDB.png)
+![Search](SearchDynamoDB.png)
 
 Click **Create table**: On the DynamoDB page, you will see the "Create table" button in the upper right corner.
-![Create Table](/images/2.prerequisite/CreateTable.png)
+![Create Table](CreateTable.png)
 
 Fill in table information: Enter the table name as `Users` and Partition key as `userID` with String data type. Other parameters can be left as default. Finally, click **Create table** to complete.
-![Table Info](/images/2.prerequisite/TableInfo.png)
+![Table Info](TableInfo.png)
 
 After creating the table, you will see the `Users` table in your DynamoDB tables list. You can click on the table name to view details and manage data in this table.
-![Table Created](/images/2.prerequisite/TableCreated.png)
+![Table Created](TableCreated.png)

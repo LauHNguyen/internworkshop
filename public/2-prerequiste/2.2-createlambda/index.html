@@ -12,21 +12,21 @@
     <title>Create Lambda Function :: AWS System Manager</title>
 
     
-    <link href="/internworkshop/css/nucleus.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/fontawesome-all.min.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/hybrid.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/featherlight.min.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/auto-complete.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/theme.css?1752659558" rel="stylesheet">
-    <link href="/internworkshop/css/hugo-theme.css?1752659558" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1752737799" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1752737799" rel="stylesheet">
     
-    <link href="/internworkshop/css/theme-workshop.css?1752659558" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1752737799" rel="stylesheet">
     
     
 
-    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752659558"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752737799"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752659558"></script>
-<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752659558"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752737799"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752737799"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/internworkshop\/";
     
 </script>
-<script type="text/javascript" src="/internworkshop/js/search.js?1752659558"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1752737799"></script>
 
     
   </div>
@@ -908,9 +908,9 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
 <li>Click <strong>Create function</strong></li>
 </ol>
 <p>Go to <strong>Lambda Console</strong>: Access the AWS Management Console and search for Lambda.
-<img src="/images/2.prerequisite/SearchLambda.png" alt="Search"></p>
+<img src="images/2.prerequisite/SearchLambda.png" alt="Search"></p>
 <p>Click <strong>Create function</strong>: On the Lambda page, you will see the &ldquo;Create function&rdquo; button in the upper right corner.
-<img src="/images/2.prerequisite/CreateFunction.png" alt="Create Function"></p>
+<img src="images/2.prerequisite/CreateFunction.png" alt="Create Function"></p>
 <p>Fill in function information: Enter the function name as <code>UserService</code>, select Runtime as <code>Node.js 18.x</code>. Other parameters can be left as default. Finally, click <strong>Create function</strong> to complete.</p>
 
 <div class="notices info" ><p>Here we use Node.js as the programming language for Lambda function. You can choose another language if you want, but make sure your source code is compatible with that runtime.</p>
@@ -919,9 +919,9 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
 <p>Since I previously created a lambda function named <code>UserService</code>, I will name it <code>UserService1</code> to avoid name conflicts. If you haven&rsquo;t created one yet, you can name it <code>UserService</code>.</p>
 <p>Besides the name and runtime information, you can leave other parameters as default. After clicking <strong>Create function</strong>, Lambda will create the function for you. An IAM role will be automatically created to allow Lambda to access other AWS services like DynamoDB.</p>
 <p>Click <strong>Create function</strong>: After filling in all information, click the &ldquo;Create function&rdquo; button to complete creating the Lambda function.
-<img src="/images/2.prerequisite/FunctionInfo.png" alt="Function Info"></p>
+<img src="images/2.prerequisite/FunctionInfo.png" alt="Function Info"></p>
 <p>After creating the function, you will see the management page of the Lambda function <code>UserService</code>. Here, you can configure other parameters such as access permissions, environment variables, and function source code.
-<img src="/images/2.prerequisite/FunctionCreated.png" alt="Function Created"></p>
+<img src="images/2.prerequisite/FunctionCreated.png" alt="Function Created"></p>
 <h3 id="2-upload-source-code-for-lambda-function">2: Upload Source Code for Lambda Function</h3>
 <p>Now we will upload source code for the Lambda function <code>UserService</code>. This source code will include functions to handle CRUD requests from API Gateway and interact with DynamoDB.</p>
 <p>You can upload source code directly to Lambda or use AWS CLI or AWS SDK to upload source code from your computer to Lambda.</p>
@@ -1105,7 +1105,7 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
 </div>
 
 3. Click <strong>Deploy</strong> to save changes.
-<img src="/images/2.prerequisite/CodeEditor.png" alt="Code Editor"></p>
+<img src="images/2.prerequisite/CodeEditor.png" alt="Code Editor"></p>
 <p>In this step, I added /v1/users to the beginning of the paths for easy management and API expansion in the future. You can change this path if you want, but remember to update it in the source code and API Gateway configuration later.</p>
 <h3 id="3-grant-dynamodb-access-permission-to-lambda-function">3: Grant DynamoDB Access Permission to Lambda Function</h3>
 <p>For the Lambda function to access the DynamoDB table, we need to grant access permission to this Lambda function. This is done through the IAM Role that the Lambda function uses.</p>
@@ -1115,23 +1115,23 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
 </li>
 <li>
 <p>Click on the IAM role link in the &ldquo;role name&rdquo; section to open the IAM role management page.
-<img src="/images/2.prerequisite/ExecutionRole.png" alt="Execution Role"></p>
+<img src="images/2.prerequisite/ExecutionRole.png" alt="Execution Role"></p>
 </li>
 <li>
 <p>In the IAM role page, click <strong>Add permissions</strong> and select <strong>Attach policies</strong>.
-<img src="/images/2.prerequisite/AttachPolicy1.png" alt="Attach Policy"></p>
+<img src="images/2.prerequisite/AttachPolicy1.png" alt="Attach Policy"></p>
 </li>
 <li>
 <p>Search for and select the <code>AmazonDynamoDBFullAccess</code> policy to grant full access to DynamoDB. You can also create a custom policy if you want to limit access permissions.
-<img src="/images/2.prerequisite/AttachPolicy2.png" alt="Attach Policy"></p>
+<img src="images/2.prerequisite/AttachPolicy2.png" alt="Attach Policy"></p>
 </li>
 <li>
 <p>Click <strong>Attach policy</strong> to apply this policy to the IAM role of the Lambda function.
-<img src="/images/2.prerequisite/PolicyAttached1.png" alt="Policy Attached"></p>
+<img src="images/2.prerequisite/PolicyAttached1.png" alt="Policy Attached"></p>
 </li>
 <li>
 <p>Return to the Lambda function management page, you will see the IAM role has been updated with the new policy.
-<img src="/images/2.prerequisite/PolicyAttached2.png" alt="Policy Attached"></p>
+<img src="images/2.prerequisite/PolicyAttached2.png" alt="Policy Attached"></p>
 </li>
 </ol>
 
@@ -1548,19 +1548,19 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/internworkshop/js/clipboard.min.js?1752659559"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752659559"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752659559"></script>
-    <script src="/internworkshop/js/jquery.sticky.js?1752659559"></script>
-    <script src="/internworkshop/js/featherlight.min.js?1752659559"></script>
-    <script src="/internworkshop/js/highlight.pack.js?1752659559"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1752737799"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752737799"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752737799"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1752737799"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1752737799"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1752737799"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752659559"></script>
-    <script src="/internworkshop/js/learn.js?1752659559"></script>
-    <script src="/internworkshop/js/hugo-learn.js?1752659559"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752737799"></script>
+    <script src="/internworkshop/js/learn.js?1752737799"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1752737799"></script>
 
-    <link href="/internworkshop/mermaid/mermaid.css?1752659559" rel="stylesheet" />
-    <script src="/internworkshop/mermaid/mermaid.js?1752659559"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1752737799" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1752737799"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

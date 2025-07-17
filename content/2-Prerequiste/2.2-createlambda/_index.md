@@ -19,10 +19,10 @@ The steps you need to complete for this step are as follows:
 5. Click **Create function**
 
 Go to **Lambda Console**: Access the AWS Management Console and search for Lambda.
-![Search](/images/2.prerequisite/SearchLambda.png)
+![Search](images/2.prerequisite/SearchLambda.png)
 
 Click **Create function**: On the Lambda page, you will see the "Create function" button in the upper right corner.
-![Create Function](/images/2.prerequisite/CreateFunction.png)
+![Create Function](images/2.prerequisite/CreateFunction.png)
 
 Fill in function information: Enter the function name as `UserService`, select Runtime as `Node.js 18.x`. Other parameters can be left as default. Finally, click **Create function** to complete.
 
@@ -35,10 +35,10 @@ Since I previously created a lambda function named `UserService`, I will name it
 Besides the name and runtime information, you can leave other parameters as default. After clicking **Create function**, Lambda will create the function for you. An IAM role will be automatically created to allow Lambda to access other AWS services like DynamoDB.
 
 Click **Create function**: After filling in all information, click the "Create function" button to complete creating the Lambda function.
-![Function Info](/images/2.prerequisite/FunctionInfo.png)
+![Function Info](images/2.prerequisite/FunctionInfo.png)
 
 After creating the function, you will see the management page of the Lambda function `UserService`. Here, you can configure other parameters such as access permissions, environment variables, and function source code.
-![Function Created](/images/2.prerequisite/FunctionCreated.png)
+![Function Created](images/2.prerequisite/FunctionCreated.png)
 
 ### 2: Upload Source Code for Lambda Function
 Now we will upload source code for the Lambda function `UserService`. This source code will include functions to handle CRUD requests from API Gateway and interact with DynamoDB.
@@ -226,7 +226,7 @@ When you just added new source code, Lambda will notify that the source code has
 Make sure this source code file is saved with the name `index.js` in the root directory of the Lambda function. Lambda will automatically use this file as the entry point for the function.
 {{% /notice %}}
 3. Click **Deploy** to save changes.
-![Code Editor](/images/2.prerequisite/CodeEditor.png)
+![Code Editor](images/2.prerequisite/CodeEditor.png)
 
 In this step, I added /v1/users to the beginning of the paths for easy management and API expansion in the future. You can change this path if you want, but remember to update it in the source code and API Gateway configuration later.
 
@@ -234,13 +234,13 @@ In this step, I added /v1/users to the beginning of the paths for easy managemen
 For the Lambda function to access the DynamoDB table, we need to grant access permission to this Lambda function. This is done through the IAM Role that the Lambda function uses.
 1. In the Lambda function `UserService` management page, go to the "Configuration" tab, go to the "Permissions" tab, scroll down to the "Execution role" section.
 2. Click on the IAM role link in the "role name" section to open the IAM role management page.
-![Execution Role](/images/2.prerequisite/ExecutionRole.png)
+![Execution Role](images/2.prerequisite/ExecutionRole.png)
 
 3. In the IAM role page, click **Add permissions** and select **Attach policies**.
-![Attach Policy](/images/2.prerequisite/AttachPolicy1.png)
+![Attach Policy](images/2.prerequisite/AttachPolicy1.png)
 4. Search for and select the `AmazonDynamoDBFullAccess` policy to grant full access to DynamoDB. You can also create a custom policy if you want to limit access permissions.
-![Attach Policy](/images/2.prerequisite/AttachPolicy2.png)
+![Attach Policy](images/2.prerequisite/AttachPolicy2.png)
 5. Click **Attach policy** to apply this policy to the IAM role of the Lambda function.
-![Policy Attached](/images/2.prerequisite/PolicyAttached1.png)
+![Policy Attached](images/2.prerequisite/PolicyAttached1.png)
 6. Return to the Lambda function management page, you will see the IAM role has been updated with the new policy.
-![Policy Attached](/images/2.prerequisite/PolicyAttached2.png)
+![Policy Attached](images/2.prerequisite/PolicyAttached2.png)

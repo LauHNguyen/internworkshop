@@ -10,7 +10,7 @@ chapter : false
 
  Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về API Gateway, Lambda function, CodeBuild và CodePipeline. Thực hành triển khai api với OpenAPI cũng như việc tự động hóa quá trình triển khai và kiểm tra code sau khi đẩy lên github.
 
-![Cấu trúc AWS](/images/api_first_development.png) 
+![Cấu trúc AWS](images/api_first_development.png) 
 ### Nội dung
 
  1. [Giới thiệu](1-introduce/)

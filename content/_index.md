@@ -9,7 +9,7 @@ chapter : false
 ### Overall
  In this lab, you will learn the basic and practices of API Gateway, Lambda functions, CodeBuild, and CodePipeline. Practice deploying api with OpenAPI as well as automating the deployment process and testing code after pushing it to github.
 
-![AWSArchiteture](/images/api_first_development.png) 
+![AWSArchiteture](images/api_first_development.png) 
 
 ### Content
  1. [Introduction ](1-introduce/)

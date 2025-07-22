@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API-First Development on AWS System Manager</title>
-    <link>http://localhost:1313/internworkshop/vi/</link>
+    <link>https://lauhnguyen.github.io/internworkshop/vi/</link>
     <description>Recent content in API-First Development on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/internworkshop/vi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lauhnguyen.github.io/internworkshop/vi/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head><script src="/internworkshop/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=internworkshop/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
@@ -12,21 +12,21 @@
     <title>Tạo Lambda Function :: AWS System Manager</title>
 
     
-    <link href="/internworkshop/css/nucleus.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/fontawesome-all.min.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/hybrid.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/featherlight.min.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/perfect-scrollbar.min.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/auto-complete.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/theme.css?1752739176" rel="stylesheet">
-    <link href="/internworkshop/css/hugo-theme.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1753179594" rel="stylesheet">
     
-    <link href="/internworkshop/css/theme-workshop.css?1752739176" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1753179594" rel="stylesheet">
     
     
 
-    <script src="/internworkshop/js/jquery-3.3.1.min.js?1752739176"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753179594"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1752739176"></script>
-<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1752739176"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753179594"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753179594"></script>
 <script type="text/javascript">
     
-        var baseurl = "http:\/\/localhost:1313\/internworkshop\/\/vi";
+        var baseurl = "https:\/\/lauhnguyen.github.io\/internworkshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/internworkshop/js/search.js?1752739176"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1753179594"></script>
 
     
   </div>
@@ -195,12 +195,12 @@
  
   
     
-    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.3-createapigatway/" title="Tạo API Gateway" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.3-createapigateway/" title="Tạo API Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/internworkshop/vi/2-prerequiste/2.3-createapigatway/">
+      <a href="/internworkshop/vi/2-prerequiste/2.3-createapigateway/">
            <b> 2.3 </b> Tạo API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -230,13 +230,13 @@
  
   
     
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-deploycodebuild/" title="Triển khai trên CodeBuild" class="dd-item 
         
         
         
         ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+      <a href="/internworkshop/vi/3-deploycodebuild/">
+           <b> 3. </b> Triển khai trên CodeBuild
           
             <i class="fas fa-check read-icon"></i>
           
@@ -261,13 +261,13 @@
  
   
     
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.1-public-instance/" title="Kết nối đến máy chủ Public" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/" title="Tạo GitHub Repository" class="dd-item 
         
         
         
         ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.1-public-instance/">
-           <b> 3.1. </b> Kết nối đến máy chủ Public
+      <a href="/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/">
+           <b> 3.1. </b> Tạo GitHub Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -289,355 +289,13 @@
  
   
     
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/" title="Tạo kết nối đến máy chủ EC2 Private" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/3-deploycodebuild/3.2-createcodebuild/" title="Tạo dịch vụ CodeBuild" class="dd-item 
         
         
         
         ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/">
-           <b> 3.2. </b> Tạo kết nối đến máy chủ EC2 Private
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Kích hoạt DNS hostnames" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
-           <b> 3.2.1 </b> Kích hoạt DNS hostnames
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Tạo VPC Endpoint" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
-           <b> 3.2.2 </b> Tạo VPC Endpoint
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Tạo Endpoint ssm" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
-           <b> 3.2.2.1 </b> Tạo Endpoint ssm
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Tạo Endpoint ssmmessages" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
-           <b> 3.2.2.2 </b> Tạo Endpoint ssmmessages
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Tạo Endpoint ec2messages" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
-           <b> 3.2.2.3 </b> Tạo Endpoint ec2messages
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Kết nối EC2 Private" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
-           <b> 3.2.3 </b> Kết nối EC2 Private
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/4-s3log/" title="Quản lý session logs" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/4-s3log/">
-           <b> 4. </b> Quản lý session logs
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/4-s3log/4.1-updateiamrole/" title="Cập nhật IAM Role" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/4-s3log/4.1-updateiamrole/">
-           <b> 4.1 </b> Cập nhật IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/4-s3log/4.2-creates3bucket/" title="Tạo S3 Bucket" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/4-s3log/4.2-creates3bucket/">
-           <b> 4.2 </b> Tạo S3 Bucket
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/4-s3log/4.3-creategwes3/" title="Tạo S3 Gateway endpoint" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/4-s3log/4.3-creategwes3/">
-           <b> 4.3 </b> Tạo S3 Gateway endpoint
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/internworkshop/vi/4-s3log/4.4-configsessionlogs/" title="Theo dõi session logs" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/internworkshop/vi/4-s3log/4.4-configsessionlogs/">
-           <b> 4.4 </b> Theo dõi session logs
+      <a href="/internworkshop/vi/3-deploycodebuild/3.2-createcodebuild/">
+           <b> 3.2. </b> Tạo dịch vụ CodeBuild
           
             <i class="fas fa-check read-icon"></i>
           
@@ -666,13 +324,107 @@
  
   
     
-    <li data-nav-id="/internworkshop/vi/5-portfwd/" title="Port Forwarding" class="dd-item 
+    <li data-nav-id="/internworkshop/vi/4-monitoring/" title="Thực hiện giám sát và tạo cảnh báo" class="dd-item 
         
         
         
         ">
-      <a href="/internworkshop/vi/5-portfwd/">
-           <b> 5. </b> Port Forwarding
+      <a href="/internworkshop/vi/4-monitoring/">
+           <b> 4. </b> Thực hiện giám sát và tạo cảnh báo
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/4-monitoring/4.1-configapigateway/" title="Cấu hình cho API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/4-monitoring/4.1-configapigateway/">
+           <b> 4.1 </b> Cấu hình cho API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/4-monitoring/4.2-configlambda/" title="Cấu hình cho Lambda" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/4-monitoring/4.2-configlambda/">
+           <b> 4.2 </b> Cấu hình cho Lambda
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/5-deploycodepipeline/" title="Triển khai CodePipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/5-deploycodepipeline/">
+           <b> 5. </b> Triển khai CodePipeline
           
             <i class="fas fa-check read-icon"></i>
           
@@ -745,7 +497,7 @@
                   
                     
                     
-                      <option id="en" value="http://localhost:1313/internworkshop/2-prerequiste/2.2-createlambda/">English</option>
+                      <option id="en" value="https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.2-createlambda/">English</option>
                     
                   
               
@@ -759,7 +511,7 @@
                   
                     
                     
-                      <option id="vi" value="http://localhost:1313/internworkshop/vi/2-prerequiste/2.2-createlambda/" selected>Tiếng Việt</option>
+                      <option id="vi" value="https://lauhnguyen.github.io/internworkshop/vi/2-prerequiste/2.2-createlambda/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1296,84 +1048,6 @@ Vì để đơn giản nên chúng ta dùng 1 Lambda function duy nhất để x
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -1393,64 +1067,10 @@ Vì để đơn giản nên chúng ta dùng 1 Lambda function duy nhất để x
 
                     
                     
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                         
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1531,7 +1151,7 @@ Vì để đơn giản nên chúng ta dùng 1 Lambda function duy nhất để x
 			<a class="nav nav-prev" href="/internworkshop/vi/2-prerequiste/2.1-createdynamodb/" title="Chuẩn bị bảng DynamoDB"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/internworkshop/vi/2-prerequiste/2.3-createapigatway/" title="Tạo API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/internworkshop/vi/2-prerequiste/2.3-createapigateway/" title="Tạo API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1541,19 +1161,19 @@ Vì để đơn giản nên chúng ta dùng 1 Lambda function duy nhất để x
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/internworkshop/js/clipboard.min.js?1752739177"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.min.js?1752739177"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1752739177"></script>
-    <script src="/internworkshop/js/jquery.sticky.js?1752739177"></script>
-    <script src="/internworkshop/js/featherlight.min.js?1752739177"></script>
-    <script src="/internworkshop/js/highlight.pack.js?1752739177"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1753179594"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753179594"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753179594"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1753179594"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1753179594"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1753179594"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1752739177"></script>
-    <script src="/internworkshop/js/learn.js?1752739177"></script>
-    <script src="/internworkshop/js/hugo-learn.js?1752739177"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753179594"></script>
+    <script src="/internworkshop/js/learn.js?1753179594"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1753179594"></script>
 
-    <link href="/internworkshop/mermaid/mermaid.css?1752739177" rel="stylesheet" />
-    <script src="/internworkshop/mermaid/mermaid.js?1752739177"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1753179594" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1753179594"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

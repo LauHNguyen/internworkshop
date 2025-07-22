@@ -1,83 +1,63 @@
 +++
-title = "Clean up resources"
-date = 2022
+title = "Clean Up Resources  "
+date = 2021
 weight = 6
 chapter = false
 pre = "<b>6. </b>"
 +++
 
-We will take the following steps to delete the resources we created in this exercise.
+We will proceed with the following steps to delete the resources we created in this lab.
 
-#### Delete EC2 instance
+### Delete CodePipeline
+- Access the [CodePipeline management console](https://console.aws.amazon.com/codesuite/codepipeline/home)
+- Select the pipeline you want to delete.
+- Click **Delete Pipeline** to delete the pipeline.
+- Confirm the deletion by entering the pipeline name and clicking **Delete**.
+![Delete Pipeline](DeletePipeline.png)
 
-1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
-   + Click **Instances**.
-   + Select both **Public Linux Instance** and **Private Windows Instance** instances.
-   + Click **Instance state**.
-   + Click **Terminate instance**, then click **Terminate** to confirm.
+### Delete S3 Bucket
+Since Pipeline automatically creates an S3 bucket to store artifacts, we need to delete this bucket after deleting the pipeline.
+- Access the [S3 management console](https://console.aws.amazon.com/s3/home)
+- Select the bucket you created in this lab.
+- First, you need to ensure that the S3 bucket no longer contains any data. You can delete the files in the bucket or delete the entire bucket.
+- Click **Empty** to delete all files in the bucket.
+- Confirm the deletion by entering the bucket name and clicking **Empty**.
+![Empty S3 Bucket](EmptyS3Bucket.png)
+- Next, click **Delete** to delete the bucket.
+- Confirm the deletion by entering the bucket name and clicking **Delete**.
+![Delete S3 Bucket](DeleteS3Bucket.png)
 
-2. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home#/home)
-   + Click **Roles**.
-   + In the search box, enter **SSM**.
-   + Click to select **SSM-Role**.
-   + Click **Delete**, then enter the role name **SSM-Role** and click **Delete** to delete the role.
+### Delete CodeBuild
+- Access the [CodeBuild management console](https://console.aws.amazon.com/codesuite/codebuild/home)
+- Select the CodeBuild project you want to delete.
+- In the **Actions** section, click **Delete**.
+- Confirm the deletion by entering the project name and clicking **Delete**.
+![Delete CodeBuild](DeleteCodeBuild.png)
 
-![Clean](/images/6.clean/001-clean.png)
+### Delete IAM Role
+- Access the [IAM management console](https://console.aws.amazon.com/iam/home)
+- Select **Roles** from the left menu.
+- Select the IAM Role you created in this lab to delete.
+- Click **Delete** to delete the IAM Role.
+- Confirm the deletion by entering the IAM Role name and clicking **Delete**.
 
-3. Click **Users**.
-   + Click on user **Portfwd**.
-   + Click **Delete**, then enter the user name **Portfwd** and click **Delete** to delete the user.
+### Delete Lambda Function
+- Access the [Lambda management console](https://console.aws.amazon.com/lambda/home)
+- Select the Lambda function you created in this lab.
+- Click **Actions** and select **Delete**.
+- Confirm the deletion by entering `confirm` and clicking **Delete**.
+![Delete Lambda Function](DeleteLambdaFunction.png)
 
-#### Delete S3 bucket
+### Delete API Gateway
+- Access the [API Gateway management console](https://console.aws.amazon.com/apigateway/home)
+- Select the API you created in this lab.
+- Click **Delete** in the top right corner.
+- Confirm the deletion by entering `confirm` and clicking **Delete**.
+![Delete API Gateway](DeleteAPIGateway.png)
 
-1. Access [System Manager - Session Manager service management console](https://console.aws.amazon.com/systems-manager/session-manager).
-   + Click the **Preferences** tab.
-   + Click **Edit**.
-   + Scroll down.
-   + In the section **S3 logging**.
-   + Uncheck **Enable** to disable logging.
-   + Scroll down.
-   + Click **Save**.
-
-2. Go to [S3 service management console](https://s3.console.aws.amazon.com/s3/home)
-   + Click on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 )
-   + Click **Empty**.
-   + Enter **permanently delete**, then click **Empty** to proceed to delete the object in the bucket.
-   + Click **Exit**.
-
-3. After deleting all objects in the bucket, click **Delete**
-
-![Clean](/images/6.clean/002-clean.png)
-
-4. Enter the name of the S3 bucket, then click **Delete bucket** to proceed with deleting the S3 bucket.
-
-![Clean](/images/6.clean/003-clean.png)
-
-#### Delete VPC Endpoints
-
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   + Click **Endpoints**.
-   + Select the 4 endpoints we created for the lab including **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-   + Click **Actions**.
-   + Click **Delete VPC endpoints**.
-
-![Clean](/images/6.clean/004-clean.png)
-
-2. In the confirm box, enter **delete**.
-   + Click **Delete** to proceed with deleting endpoints.
-
-3. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.
-
-![Clean](/images/6.clean/005-clean.png)
-
-#### Delete VPC
-
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   + Click **Your VPCs**.
-   + Click on **Lab VPC**.
-   + Click **Actions**.
-   + Click **Delete VPC**.
-
-2. In the confirm box, enter **delete** to confirm, click **Delete** to delete **Lab VPC** and related resources.
-
-![Clean](/images/6.clean/006-clean.png)
+### Delete DynamoDB Table
+- Access the [DynamoDB management console](https://console.aws.amazon.com/dynamodb/home)
+- Select the table you created in this lab.
+- Click **Delete** to delete the table.
+- Confirm the deletion by entering `confirm` and clicking **Delete**.
+![Delete DynamoDB Table](DeleteDynamoDBTable.png)

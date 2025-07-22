@@ -20,6 +20,4 @@ Below are the steps to create DynamoDB, Lambda, and API Gateway
 ### Content
   - [Create DynamoDB Table](2.1-createdynamodb/)
   - [Create Lambda Function](2.2-createlambda/)
-  - [Create API Gateway](2.3-createapigatway/)
-
-  
+  - [Create API Gateway](2.3-createapigateway/)

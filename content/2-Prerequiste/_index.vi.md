@@ -19,6 +19,7 @@ Sau đây là các bước tạo DynamoDB, Lambda và API Gateway
 
 ### Nội dung
   - [Tạo bảng trong DynamoDB](2.1-createdynamodb/)
-  - [Tạo IAM Role](2.2-createiamrole/)
+  - [Tạo Lambda function](2.2-createlambda/)
+  - [Tạo API Gateway](2.3-createapigateway/)
 
   

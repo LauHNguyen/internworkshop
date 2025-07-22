@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="hoangnguyen.lau@gmail.com">
+
+    <link rel="icon" href="/internworkshop/images/favicon.png" type="image/png">
+
+    <title>Tạo API Gateway :: AWS System Manager</title>
+
+    
+    <link href="/internworkshop/css/nucleus.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1753179594" rel="stylesheet">
+    
+    <link href="/internworkshop/css/theme-workshop.css?1753179594" rel="stylesheet">
+    
+    
+
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753179594"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/internworkshop/vi/2-prerequiste/2.3-createapigateway/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753179594"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753179594"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/lauhnguyen.github.io\/internworkshop\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1753179594"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/1-introduce/" title="Giới thiệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/1-introduce/">
+           <b> 1. </b> Giới thiệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/internworkshop/vi/2-prerequiste/">
+           <b> 2. </b> Các bước chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.1-createdynamodb/" title="Chuẩn bị bảng DynamoDB" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/2-prerequiste/2.1-createdynamodb/">
+           <b> 2.1 </b> Chuẩn bị bảng DynamoDB
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.2-createlambda/" title="Tạo Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/2-prerequiste/2.2-createlambda/">
+           <b> 2.2 </b> Tạo Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/2-prerequiste/2.3-createapigateway/" title="Tạo API Gateway" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/internworkshop/vi/2-prerequiste/2.3-createapigateway/">
+           <b> 2.3 </b> Tạo API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/3-deploycodebuild/" title="Triển khai trên CodeBuild" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/3-deploycodebuild/">
+           <b> 3. </b> Triển khai trên CodeBuild
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/" title="Tạo GitHub Repository" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/">
+           <b> 3.1. </b> Tạo GitHub Repository
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/3-deploycodebuild/3.2-createcodebuild/" title="Tạo dịch vụ CodeBuild" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/3-deploycodebuild/3.2-createcodebuild/">
+           <b> 3.2. </b> Tạo dịch vụ CodeBuild
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/4-monitoring/" title="Thực hiện giám sát và tạo cảnh báo" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/4-monitoring/">
+           <b> 4. </b> Thực hiện giám sát và tạo cảnh báo
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/4-monitoring/4.1-configapigateway/" title="Cấu hình cho API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/4-monitoring/4.1-configapigateway/">
+           <b> 4.1 </b> Cấu hình cho API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/4-monitoring/4.2-configlambda/" title="Cấu hình cho Lambda" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/4-monitoring/4.2-configlambda/">
+           <b> 4.2 </b> Cấu hình cho Lambda
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/5-deploycodepipeline/" title="Triển khai CodePipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/5-deploycodepipeline/">
+           <b> 5. </b> Triển khai CodePipeline
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/vi/6-cleanup/" title="Dọn dẹp tài nguyên  " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/vi/6-cleanup/">
+          <b>6. </b>Dọn dẹp tài nguyên  
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.3-createapigateway/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="https://lauhnguyen.github.io/internworkshop/vi/2-prerequiste/2.3-createapigateway/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>03-07-2025</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Person </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/Lầu-Hoàng-Nguyên/"  style="color:orange">Hoàng Nguyên  </a> <br>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/internworkshop/vi/'>API-First Development</a> > <a href='/internworkshop/vi/2-prerequiste/'>Các bước chuẩn bị</a> > Tạo API Gateway
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tạo-api-gateway">Tạo API Gateway</a>
+      <ul>
+        <li><a href="#tạo-resource-và-method-cho-api">Tạo Resource và Method cho API</a></li>
+        <li><a href="#deploy-api">Deploy API</a></li>
+        <li><a href="#kiểm-tra-api">Kiểm tra API</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Tạo API Gateway
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="tạo-api-gateway">Tạo API Gateway</h2>
+<p>Trong bước này, chúng ta sẽ tạo một API Gateway để kết nối với Lambda function và DynamoDB. API Gateway sẽ cung cấp các endpoint để thực hiện các thao tác CRUD trên bảng DynamoDB thông qua Lambda function.</p>
+<p>Các bước bạn cần hoàn tất bước này sẽ như sau:</p>
+<ol>
+<li>Vào <strong>API Gateway Console</strong></li>
+<li>Nhấn <strong>Create API</strong></li>
+<li>Chọn <strong>REST API</strong> và nhấn <strong>Build</strong></li>
+<li>Nhập thông tin cho API:
+<ul>
+<li><strong>API name</strong>: <code>UserServiceAPI</code></li>
+<li><strong>Description</strong>: <code>API for User Service</code></li>
+<li><strong>Endpoint Type</strong>: <code>Regional</code></li>
+</ul>
+</li>
+<li>Nhấn <strong>Create API</strong> để hoàn tất việc tạo API Gateway.</li>
+</ol>
+<p>Vào <strong>API Gateway Console</strong>: Truy cập vào AWS Management Console và tìm kiếm API Gateway.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/SearchAPIGateway.png" alt="Search">
+Nhấn <strong>Create API</strong>: Tại trang API Gateway, bạn sẽ thấy nút &ldquo;Create API&rdquo; ở góc trên bên phải.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/CreateAPI.png" alt="Create API">
+Chọn <strong>REST API</strong>: Chọn tùy chọn &ldquo;REST API&rdquo; và nhấn nút &ldquo;Build&rdquo; để bắt đầu tạo API.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/SelectRESTAPI.png" alt="Select REST API">
+Chọn <strong>New API</strong>: Chọn tùy chọn &ldquo;New API&rdquo; để tạo một API mới.
+Điền thông tin API: Nhập tên API là <code>UserServiceAPI</code>, mô tả là <code>API for User Service</code>, và chọn loại endpoint là <code>Regional</code>. Các thông số khác có thể để mặc định. Cuối cùng, nhấn <strong>Create API</strong> để hoàn tất.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/APIInfo.png" alt="API Info"></p>
+<h3 id="tạo-resource-và-method-cho-api">Tạo Resource và Method cho API</h3>
+<p>Sau khi tạo API, bạn sẽ thấy trang quản lý của API Gateway <code>UserServiceAPI</code>. Tại đây, bạn có thể cấu hình các endpoint, phương thức HTTP, và tích hợp với Lambda function.
+Chọn <strong>Create Resource</strong>: Để tạo một resource cho API, bạn cần nhấn nút &ldquo;Create Resource&rdquo; trong trang quản lý API.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/CreateResource.png" alt="Create Resource">
+Vì chúng ta sẽ tạo một resource cho người dùng, nên bạn có thể đặt tên resource là <code>users</code> hoặc <code>v1/users</code> để phân biệt với các phiên bản API khác trong tương lai.
+Ở đây, mình sẽ tạo resource là <code>v1/users</code> để phù hợp với phiên bản API.
+Đầu tiên, bạn cần tạo một resource chính cho API. Resource này sẽ là điểm gốc cho các endpoint của API.</p>
+<p>Điền thông tin resource: Nhập tên resource là <code>v1</code> và nhấn <strong>Create Resource</strong> để tạo resource này.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/CreateResource1.png" alt="Create Resource">
+Tương tự như v1 ta sẽ tạo một resource con là <code>users</code> trong resource <code>v1</code>.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/CreateResource2.png" alt="Create Resource"></p>
+<p>Chọn <strong>Create Method</strong>: Sau khi tạo resource <code>v1/users</code>, bạn cần tạo các phương thức HTTP cho resource này. Nhấn nút &ldquo;Create Method&rdquo; để bắt đầu.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/CreateMethod.png" alt="Create Method">
+Chọn phương thức HTTP: Chọn phương thức HTTP mà bạn muốn tạo cho resource <code>v1/users</code>. Ví dụ, bạn có thể chọn <code>GET</code>, <code>POST</code>, <code>PUT</code>, và <code>DELETE</code> để thực hiện các thao tác CRUD.
+Ở đây mình sẽ tạo các phương thức <code>GET</code>, <code>POST</code> cho resource <code>v1/users</code>.
+<strong>Method type</strong>: Chọn loại phương thức HTTP mà bạn muốn tạo. Ví dụ, nếu bạn muốn tạo phương thức <code>GET</code>, hãy chọn <code>GET</code> từ danh sách.
+<strong>Proxy integration</strong>: Bật tùy chọn này để sử dụng tích hợp proxy.
+<strong>Integration type</strong>: Chọn loại tích hợp cho phương thức. Đối với trường hợp này, bạn sẽ chọn <code>Lambda Function</code> để tích hợp với Lambda function.
+<strong>Lambda Function</strong>: Chọn tên Lambda function mà bạn đã tạo ở bước trước, ví dụ <code>UserService</code>. Điều này sẽ liên kết phương thức HTTP với Lambda function để xử lý các yêu cầu.
+Các bạn có thể chọn <code>Lambda Function</code> cho tất cả các phương thức CRUD.
+Các phần còn lại bạn có thể để mặc định.
+Nhấn <strong>Create Method</strong> để hoàn tất việc tạo phương thức.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/SelectMethod.png" alt="Select Method"></p>
+<p>Ta sẽ tạo thêm resource <code>v1/users/{userID}</code> để lấy thông tin chi tiết của một người dùng cụ thể.
+Tương tự như trên, bạn có thể tạo resource <code>v1/users/{userID}</code> bằng cách chọn <code>Create Resource</code>, nhập path là <code>/v1/users/</code> và nhập tên resource là <code>{userID}</code>.</p>
+<p>Đây là các phương thức mà bạn sẽ tạo cho resource <code>v1/users</code> và <code>v1/users/{userID}</code>:</p>
+<ul>
+<li><strong>GET /v1/users</strong>: Lấy danh sách tất cả người dùng.</li>
+<li><strong>POST /v1/users</strong>: Tạo một người dùng mới.</li>
+<li><strong>GET /v1/users/{userID}</strong>: Lấy thông tin chi tiết của một người dùng cụ thể.</li>
+<li><strong>PUT /v1/users/{userID}</strong>: Cập nhật thông tin của một người dùng cụ thể.</li>
+<li><strong>DELETE /v1/users/{userID}</strong>: Xóa một người dùng cụ thể.</li>
+</ul>
+<p><img src="/internworkshop/2-prerequiste/2.3-createapigateway/APIMethod.png" alt="API Method"></p>
+<h3 id="deploy-api">Deploy API</h3>
+<p>Sau khi đã tạo các resource và phương thức cho API, bạn cần deploy API để có thể sử dụng được. Việc deploy sẽ tạo ra một endpoint mà bạn có thể gọi từ bên ngoài.
+Chọn <strong>Deploy API</strong>: Nhấn nút &ldquo;Deploy API&rdquo; trong trang quản lý API.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/DeployAPI.png" alt="Deploy API">
+Chọn <strong>Deployment stage</strong>: Chọn hoặc tạo một stage để deploy API. Bạn có thể tạo một stage mới với tên là <code>dev</code> hoặc sử dụng stage mặc định.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/SelectStage.png" alt="Select Stage">
+Điền thông tin stage: Nhập tên stage là <code>dev</code> và nhấn <strong>Deploy</strong> để hoàn tất việc deploy API.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/DeployStage.png" alt="Deploy Stage">
+Sau khi deploy, bạn sẽ nhận được một URL endpoint cho API. Đây là địa chỉ mà bạn có thể sử dụng để gọi các phương thức của API.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/APIEndpoint.png" alt="API Endpoint"></p>
+<h3 id="kiểm-tra-api">Kiểm tra API</h3>
+<p>Trước khi kiểm tra API, bạn cần đảm bảo rằng Lambda function đã được cấu hình đúng và có quyền truy cập vào DynamoDB. Bạn có thể kiểm tra quyền IAM của Lambda function để đảm bảo nó có quyền đọc và ghi vào bảng DynamoDB <code>Users</code>.</p>
+<p>Quay lại Lambda function tab &ldquo;Configuration&rdquo;, chọn tab &ldquo;Permissions&rdquo; và cuộn xuống phần &ldquo;resource-based policy&rdquo;.
+Ở đây bạn sẽ thấy các quyền mà Lambda function đã được cấp tương ứng với các methods mà bạn đã tạo trong API Gateway.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/LambdaPermission.png" alt="Lambda Permissions"></p>
+<p>Bạn có thể kiểm tra API bằng cách sử dụng Postman hoặc curl để gửi các yêu cầu đến các endpoint mà bạn đã tạo.
+Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu POST với dữ liệu người dùng trong body.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;userID&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;12345&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;name&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;John Doe&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;email&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;john.doe@example.com&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;address&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;123 Main St&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p><img src="/internworkshop/2-prerequiste/2.3-createapigateway/PostmanRequest1.png" alt="Postman Request"></p>
+<p>Hoặc để lấy danh sách tất cả người dùng, bạn có thể gửi một yêu cầu GET đến URL endpoint <code>/v1/users</code>.
+<img src="/internworkshop/2-prerequiste/2.3-createapigateway/PostmanRequest2.png" alt="Postman Request"></p>
+<p>Vậy chúng ta đã hoàn thành việc tạo API Gateway và cấu hình các phương thức để tương tác với Lambda function và DynamoDB. Bây giờ bạn có thể sử dụng API này để thực hiện các thao tác CRUD trên bảng <code>Users</code> trong DynamoDB thông qua Lambda function <code>UserService</code>.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/internworkshop/vi/2-prerequiste/2.2-createlambda/" title="Tạo Lambda Function"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/internworkshop/vi/3-deploycodebuild/" title="Triển khai trên CodeBuild" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/internworkshop/js/clipboard.min.js?1753179594"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753179594"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753179594"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1753179594"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1753179594"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1753179594"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753179594"></script>
+    <script src="/internworkshop/js/learn.js?1753179594"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1753179594"></script>
+
+    <link href="/internworkshop/mermaid/mermaid.css?1753179594" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1753179594"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

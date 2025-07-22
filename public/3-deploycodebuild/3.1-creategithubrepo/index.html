@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="hoangnguyen.lau@gmail.com">
+
+    <link rel="icon" href="/internworkshop/images/favicon.png" type="image/png">
+
+    <title>Create GitHub Repository :: AWS System Manager</title>
+
+    
+    <link href="/internworkshop/css/nucleus.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1753179594" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1753179594" rel="stylesheet">
+    
+    <link href="/internworkshop/css/theme-workshop.css?1753179594" rel="stylesheet">
+    
+    
+
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753179594"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753179594"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753179594"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/lauhnguyen.github.io\/internworkshop\/";
+    
+</script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1753179594"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/1-introduce/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/1-introduce/">
+           <b> 1. </b> Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/2-prerequiste/" title="Preparation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/2-prerequiste/">
+           <b> 2. </b> Preparation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/2-prerequiste/2.1-createdynamodb/" title="Prepare DynamoDB Table" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/2-prerequiste/2.1-createdynamodb/">
+           <b> 2.1 </b> Prepare DynamoDB Table
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/2-prerequiste/2.2-createlambda/" title="Create Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/2-prerequiste/2.2-createlambda/">
+           <b> 2.2 </b> Create Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/2-prerequiste/2.3-createapigateway/" title="Create API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/2-prerequiste/2.3-createapigateway/">
+           <b> 2.3 </b> Create API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/3-deploycodebuild/" title="Deploy on CodeBuild" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/internworkshop/3-deploycodebuild/">
+           <b> 3. </b> Deploy on CodeBuild
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/" title="Create GitHub Repository" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/">
+           <b> 3.1. </b> Create GitHub Repository
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/3-deploycodebuild/3.2-createcodebuild/" title="Create CodeBuild Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/3-deploycodebuild/3.2-createcodebuild/">
+           <b> 3.2. </b> Create CodeBuild Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/4-monitoring/" title="Implement Monitoring and Create Alerts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/4-monitoring/">
+           <b> 4. </b> Implement Monitoring and Create Alerts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/4-monitoring/4.1-configapigateway/" title="Configure API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/4-monitoring/4.1-configapigateway/">
+           <b> 4.1 </b> Configure API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/4-monitoring/4.2-configlambda/" title="Configure Lambda" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/4-monitoring/4.2-configlambda/">
+           <b> 4.2 </b> Configure Lambda
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/5-deploycodepipeline/" title="Deploy CodePipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/5-deploycodepipeline/">
+           <b> 5. </b> Deploy CodePipeline
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/internworkshop/6-cleanup/" title="Clean Up Resources  " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/internworkshop/6-cleanup/">
+          <b>6. </b>Clean Up Resources  
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.1-creategithubrepo/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="https://lauhnguyen.github.io/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>03-07-2025</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Person </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/Lầu-Hoàng-Nguyên/"  style="color:orange">Hoàng Nguyên  </a> <br>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/internworkshop/'>API-First Development</a> > <a href='/internworkshop/3-deploycodebuild/'>Deploy on CodeBuild</a> > Create GitHub Repository
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#create-github-repository">Create GitHub Repository</a></li>
+        <li><a href="#create-frontend-files">Create frontend files</a></li>
+        <li><a href="#create-generate-simple-testsjs-file">Create generate-simple-tests.js file</a></li>
+        <li><a href="#create-buildspecyml-file">Create buildspec.yml file</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Create GitHub Repository
+            </h1>
+          
+
+        
+
+
+
+	<h3 id="create-github-repository">Create GitHub Repository</h3>
+<p>In this step, we will create a repository on GitHub to store the source code for our project.</p>
+<p>Follow these steps:</p>
+<ol>
+<li>Go to <a href="https://github.com">GitHub</a> and log in to your account.</li>
+<li>Click on the <strong>New</strong> button in the top left corner to create a new repository.</li>
+<li>Enter the repository information:
+<ul>
+<li><strong>Repository name</strong>: <code>UserService</code></li>
+<li><strong>Description</strong>: <code>API for User Service</code></li>
+<li><strong>Visibility</strong>: Choose <code>Public</code> or <code>Private</code> depending on your needs.</li>
+<li><strong>Initialize this repository with</strong>: Uncheck options like <strong>Add a README file</strong>, <strong>Add .gitignore</strong>, and <strong>Choose a license</strong> to start with an empty repository.
+<img src="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/RepoInfo.png" alt="Repository Creation"></li>
+</ul>
+</li>
+<li>Click <strong>Create repository</strong> to complete the repository creation.</li>
+</ol>
+<p>After creation, you will be redirected to the repository management page. Here, you can add source code, documentation, and configuration for your project.
+<img src="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/RepoCreated.png" alt="Repository Created"></p>
+<p>Clone the repository to your computer to start working with the source code. You can use the following command in the terminal:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/your-username/UserService.git
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">cd</span> UserService
+</span></span></code></pre></div><h3 id="create-frontend-files">Create frontend files</h3>
+<p>To create a simple frontend application, you can use React. You need to install Node.js and npm (Node Package Manager) on your computer before performing this step.
+If you haven&rsquo;t installed Node.js, you can download and install it from the <a href="https://nodejs.org/">official Node.js website</a>.
+And npm will be installed along with Node.js.
+After installing Node.js and npm, you can create a new React application using Create React App, a tool for creating React applications quickly and easily.
+To create a React application, you can use the following command in the terminal:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app frontend --template typescript
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">cd</span> frontend
+</span></span></code></pre></div><p><img src="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/CreateReactApp.png" alt="Create React App"></p>
+<p>It will take a little time for Create React App to create the directory structure and necessary files for your React application.
+The directory structure after creation will be as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>UserService/
+</span></span><span style="display:flex;"><span>└── frontend/
+</span></span><span style="display:flex;"><span>    ├── node_modules/
+</span></span><span style="display:flex;"><span>    ├── public/
+</span></span><span style="display:flex;"><span>    ├── src/
+</span></span><span style="display:flex;"><span>    ├── ...
+</span></span><span style="display:flex;"><span>    ├── package.json
+</span></span><span style="display:flex;"><span>    └── README.md
+</span></span></code></pre></div><p>After creating the application, install additional libraries needed for API calls and testing:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install axios
+</span></span><span style="display:flex;"><span>npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom
+</span></span></code></pre></div><p><img src="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/InstallAxios.png" alt="Install Axios"></p>
+<p>Return to the root directory</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6639ba">cd</span> ..
+</span></span></code></pre></div><h3 id="create-generate-simple-testsjs-file">Create generate-simple-tests.js file</h3>
+<p>To automatically generate simple Jest test files based on the API created from the OpenAPI specification, you need to create a Node.js script named generate-simple-tests.js in the root directory of the project.</p>
+<p>Create the generate-simple-tests.js file in the UserService directory with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">fs</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">require</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;fs&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">path</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">require</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;path&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Path to api.ts file
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#cf222e">const</span> <span style="color:#1f2328">apiFilePath</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">path</span><span style="color:#1f2328">.</span><span style="color:#1f2328">join</span><span style="color:#1f2328">(</span><span style="color:#1f2328">__dirname</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;frontend&#39;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;src&#39;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;api&#39;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;api.ts&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Path to save test files
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#cf222e">const</span> <span style="color:#1f2328">parentDir</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">path</span><span style="color:#1f2328">.</span><span style="color:#1f2328">dirname</span><span style="color:#1f2328">(</span><span style="color:#1f2328">path</span><span style="color:#1f2328">.</span><span style="color:#1f2328">dirname</span><span style="color:#1f2328">(</span><span style="color:#1f2328">apiFilePath</span><span style="color:#1f2328">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">outputDir</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">path</span><span style="color:#1f2328">.</span><span style="color:#1f2328">join</span><span style="color:#1f2328">(</span><span style="color:#1f2328">parentDir</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;testapi&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#0550ae">!</span><span style="color:#1f2328">fs</span><span style="color:#1f2328">.</span><span style="color:#1f2328">existsSync</span><span style="color:#1f2328">(</span><span style="color:#1f2328">outputDir</span><span style="color:#1f2328">))</span> <span style="color:#1f2328">fs</span><span style="color:#1f2328">.</span><span style="color:#1f2328">mkdirSync</span><span style="color:#1f2328">(</span><span style="color:#1f2328">outputDir</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">recursive</span><span style="color:#0550ae">:</span> <span style="color:#cf222e">true</span> <span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Read api.ts content
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#cf222e">let</span> <span style="color:#1f2328">apiContent</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">try</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">apiContent</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">fs</span><span style="color:#1f2328">.</span><span style="color:#1f2328">readFileSync</span><span style="color:#1f2328">(</span><span style="color:#1f2328">apiFilePath</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;utf-8&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;Successfully read api.ts&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span> <span style="color:#cf222e">catch</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">error</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">error</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;Cannot read api.ts file:&#39;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">error</span><span style="color:#1f2328">.</span><span style="color:#1f2328">message</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">process</span><span style="color:#1f2328">.</span><span style="color:#1f2328">exit</span><span style="color:#1f2328">(</span><span style="color:#0550ae">1</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Find API methods in api.ts
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#cf222e">const</span> <span style="color:#1f2328">methodRegex</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">/async\\s+(\\w+)\\s*\\([^)]*\\)\\s*:\\s*Promise&lt;[^&gt;]+&gt;/g</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">methods</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">[];</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">let</span> <span style="color:#1f2328">match</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">while</span> <span style="color:#1f2328">((</span><span style="color:#1f2328">match</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">methodRegex</span><span style="color:#1f2328">.</span><span style="color:#1f2328">exec</span><span style="color:#1f2328">(</span><span style="color:#1f2328">apiContent</span><span style="color:#1f2328">))</span> <span style="color:#0550ae">!==</span> <span style="color:#cf222e">null</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">methods</span><span style="color:#1f2328">.</span><span style="color:#1f2328">push</span><span style="color:#1f2328">({</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">name</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">match</span><span style="color:#1f2328">[</span><span style="color:#0550ae">1</span><span style="color:#1f2328">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">fullMatch</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">match</span><span style="color:#1f2328">[</span><span style="color:#0550ae">0</span><span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">methods</span><span style="color:#1f2328">.</span><span style="color:#1f2328">length</span> <span style="color:#0550ae">===</span> <span style="color:#0550ae">0</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;No API methods found in api.ts&#39;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">process</span><span style="color:#1f2328">.</span><span style="color:#1f2328">exit</span><span style="color:#1f2328">(</span><span style="color:#0550ae">1</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">`Found </span><span style="color:#0a3069">${</span><span style="color:#1f2328">methods</span><span style="color:#1f2328">.</span><span style="color:#1f2328">length</span><span style="color:#0a3069">}</span><span style="color:#0a3069"> API methods`</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Map HTTP methods based on method name
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#cf222e">function</span> <span style="color:#1f2328">guessHttpMethod</span><span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;get&#39;</span><span style="color:#1f2328">))</span> <span style="color:#cf222e">return</span> <span style="color:#0a3069">&#39;get&#39;</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;create&#39;</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">||</span> <span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;add&#39;</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">||</span> <span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;post&#39;</span><span style="color:#1f2328">))</span> <span style="color:#cf222e">return</span> <span style="color:#0a3069">&#39;post&#39;</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;update&#39;</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">||</span> <span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;edit&#39;</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">||</span> <span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;put&#39;</span><span style="color:#1f2328">))</span> <span style="color:#cf222e">return</span> <span style="color:#0a3069">&#39;put&#39;</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;delete&#39;</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">||</span> <span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;remove&#39;</span><span style="color:#1f2328">))</span> <span style="color:#cf222e">return</span> <span style="color:#0a3069">&#39;delete&#39;</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">startsWith</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;patch&#39;</span><span style="color:#1f2328">))</span> <span style="color:#cf222e">return</span> <span style="color:#0a3069">&#39;patch&#39;</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#0a3069">&#39;get&#39;</span><span style="color:#1f2328">;</span> <span style="color:#57606a">// Default to GET
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Create test file for each API method
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span><span style="color:#1f2328">methods</span><span style="color:#1f2328">.</span><span style="color:#1f2328">forEach</span><span style="color:#1f2328">(</span><span style="color:#1f2328">method</span> <span style="color:#1f2328">=&gt;</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">methodName</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">method</span><span style="color:#1f2328">.</span><span style="color:#1f2328">name</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">httpMethod</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">guessHttpMethod</span><span style="color:#1f2328">(</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">endpoint</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">`/</span><span style="color:#0a3069">${</span><span style="color:#1f2328">methodName</span><span style="color:#1f2328">.</span><span style="color:#1f2328">replace</span><span style="color:#1f2328">(</span><span style="color:#0a3069">/^(get|create|update|delete|patch)/</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#39;&#39;</span><span style="color:#1f2328">).</span><span style="color:#1f2328">toLowerCase</span><span style="color:#1f2328">()</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">`Creating test for method: </span><span style="color:#0a3069">${</span><span style="color:#1f2328">methodName</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">testCode</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">`
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">describe(&#39;</span><span style="color:#0a3069">${</span><span style="color:#1f2328">httpMethod</span><span style="color:#1f2328">.</span><span style="color:#1f2328">toUpperCase</span><span style="color:#1f2328">()</span><span style="color:#0a3069">}</span><span style="color:#0a3069"> </span><span style="color:#0a3069">${</span><span style="color:#1f2328">endpoint</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#39;, () =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">  it(&#39;should call </span><span style="color:#0a3069">${</span><span style="color:#1f2328">methodName</span><span style="color:#0a3069">}</span><span style="color:#0a3069"> successfully&#39;, () =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">    // Simple passing test
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">    expect(true).toBe(true);
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">  });
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">});`</span><span style="color:#1f2328">.</span><span style="color:#1f2328">trim</span><span style="color:#1f2328">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">testFilePath</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">path</span><span style="color:#1f2328">.</span><span style="color:#1f2328">join</span><span style="color:#1f2328">(</span><span style="color:#1f2328">outputDir</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">`</span><span style="color:#0a3069">${</span><span style="color:#1f2328">methodName</span><span style="color:#0a3069">}</span><span style="color:#0a3069">.test.js`</span><span style="color:#1f2328">);</span> <span style="color:#57606a">// Using .js instead of .ts
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">try</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">fs</span><span style="color:#1f2328">.</span><span style="color:#1f2328">writeFileSync</span><span style="color:#1f2328">(</span><span style="color:#1f2328">testFilePath</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">testCode</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">`Created: </span><span style="color:#0a3069">${</span><span style="color:#1f2328">methodName</span><span style="color:#0a3069">}</span><span style="color:#0a3069">.test.js`</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">}</span> <span style="color:#cf222e">catch</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">error</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">error</span><span style="color:#1f2328">(</span><span style="color:#0a3069">`Cannot create test file for </span><span style="color:#0a3069">${</span><span style="color:#1f2328">methodName</span><span style="color:#0a3069">}</span><span style="color:#0a3069">:`</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">error</span><span style="color:#1f2328">.</span><span style="color:#1f2328">message</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;All test files have been created.&#39;</span><span style="color:#1f2328">);</span>
+</span></span></code></pre></div><h3 id="create-buildspecyml-file">Create buildspec.yml file</h3>
+<p>The <code>buildspec.yml</code> file is a configuration file for AWS CodeBuild that defines the steps needed to build and deploy your application. You need to create this file in the root directory of your repository.</p>
+<p>The content of the <code>buildspec.yml</code> file is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0550ae">version</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">0.2</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">cache</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">paths</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>- <span style="color:#0a3069">&#39;frontend/node_modules/**/*&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">phases</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">install</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">runtime-versions</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">nodejs</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">18</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">commands</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Installing dependencies...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- npm install -g @openapitools/openapi-generator-cli<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- cd frontend<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- npm install<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- npm install -g jest<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- cd ..<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">pre_build</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">commands</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Writing setupTests.js...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- mkdir -p frontend/src<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- <span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        cat &lt;&lt;EOF &gt; frontend/src/setupTests.js
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        // Jest setup file
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        // Using require instead of import for compatibility
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        require(&#39;@testing-library/jest-dom&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        </span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Writing jest.config.js...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- <span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        cat &lt;&lt;EOF &gt; frontend/jest.config.js
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        module.exports = {
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          testEnvironment: &#39;jsdom&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          setupFilesAfterEnv: [&#39;&lt;rootDir&gt;/src/setupTests.js&#39;],
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          moduleFileExtensions: [&#39;js&#39;, &#39;jsx&#39;, &#39;ts&#39;, &#39;tsx&#39;, &#39;json&#39;],
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          testMatch: [&#39;**/testapi/*.test.js&#39;, &#39;**/__tests__/**/*.test.js&#39;],
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          collectCoverage: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          coverageDirectory: &#39;coverage&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          testPathIgnorePatterns: [&#39;/node_modules/&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        };
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        EOF</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Export OpenAPI spec from API Gateway...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- aws apigateway get-export --rest-api-id $API_ID --stage-name $STAGE --export-type oas30 --accepts application/json openapi.json<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- <span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        if [ ! -f openapi.json ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          echo &#34;Error: Failed to export openapi.json&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">          exit 1
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">        fi</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Generating TypeScript Axios client from OpenAPI spec...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- openapi-generator-cli generate -i openapi.json -g typescript-axios -o frontend/src/api<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Generating Jest test files from API...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- node generate-simple-tests.js<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">build</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">commands</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Running frontend tests with coverage...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- cd frontend<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- CI=true npm test -- --passWithNoTests || echo &#34;Tests failed but continuing build&#34;<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- echo Build frontend app...<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- npm run build<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- cd ..<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">artifacts</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">files</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>- frontend/build/**/*<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>- frontend/coverage/**/*<span style="color:#fff">
+</span></span></span></code></pre></div><p>And your directory structure will look like this:</p>
+<pre tabindex="0"><code>UserService/
+├── frontend/
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   │   ├── testapi/     (will be created by generate-simple-tests.js)
+│   │   ├── api/         (will be created by openapi-generator-cli)
+│   │   ├── ...
+│   ├── package.json
+│   ├── jest.config.js   (will be created during the build process)
+│   ├── ...
+├── generate-simple-tests.js
+└── buildspec.yml
+</code></pre><p>Finally, you need to commit and push the changes to GitHub:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#0a3069">&#34;Add frontend React app, generate-simple-tests.js, and buildspec.yml&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p>After successfully pushing, you can check your repository on GitHub to ensure that the files have been updated correctly.</p>
+<p><img src="/internworkshop/3-deploycodebuild/3.1-creategithubrepo/GitHubCommited.png" alt="GitHub Commit"></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/internworkshop/3-deploycodebuild/" title="Deploy on CodeBuild"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/internworkshop/3-deploycodebuild/3.2-createcodebuild/" title="Create CodeBuild Service" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/internworkshop/js/clipboard.min.js?1753179594"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753179594"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753179594"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1753179594"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1753179594"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1753179594"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753179594"></script>
+    <script src="/internworkshop/js/learn.js?1753179594"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1753179594"></script>
+
+    <link href="/internworkshop/mermaid/mermaid.css?1753179594" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1753179594"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

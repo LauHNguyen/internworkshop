@@ -63,7 +63,7 @@ For CodeBuild to access other AWS services such as S3, API Gateway, you need to 
 ![Create Policy](CreatePolicy.png)
 6. Select **JSON** and paste the following code to grant access to S3 and API Gateway:
 
-```json
+```bash
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -85,6 +85,7 @@ For CodeBuild to access other AWS services such as S3, API Gateway, you need to 
 }
 ```
 Here I'm adding access to API Gateway and S3. You need to replace `region-id`, `api-id`, `stage-name`, and `aws-account-id` with your corresponding values.
+
 7. Click **Review policy**, name this policy (e.g., `CodeBuildUserServicePolicy`), and click **Create policy**.
 8. Go back to the IAM role you selected, click on **Attach policies** and search for the policy you just created.
 9. Select that policy and click **Attach policy** to assign permissions to the role.

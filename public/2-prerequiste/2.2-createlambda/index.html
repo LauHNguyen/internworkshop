@@ -12,21 +12,21 @@
     <title>Create Lambda Function :: AWS System Manager</title>
 
     
-    <link href="/internworkshop/css/nucleus.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/fontawesome-all.min.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/hybrid.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/featherlight.min.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/auto-complete.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/theme.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/hugo-theme.css?1753241447" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1753243106" rel="stylesheet">
     
-    <link href="/internworkshop/css/theme-workshop.css?1753241447" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1753243106" rel="stylesheet">
     
     
 
-    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753241447"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753243106"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753241447"></script>
-<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753241447"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753243106"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753243106"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/internworkshop\/";
     
 </script>
-<script type="text/javascript" src="/internworkshop/js/search.js?1753241447"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1753243106"></script>
 
     
   </div>
@@ -682,175 +682,175 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
 <li>In the Lambda function <code>UserService</code> management page, in the &ldquo;Code&rdquo; tab, you will see a source code editor.</li>
 <li>Copy and paste the following source code into the editor:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">DynamoDBClient</span> <span style="color:#1f2328">}</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">require</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;@aws-sdk/client-dynamodb&#39;</span><span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">DynamoDBDocumentClient</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">ScanCommand</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">GetCommand</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">PutCommand</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">UpdateCommand</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">DeleteCommand</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">require</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;@aws-sdk/lib-dynamodb&#39;</span><span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">randomUUID</span> <span style="color:#1f2328">}</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">require</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;crypto&#39;</span><span style="color:#1f2328">);</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>const <span style="color:#0550ae">{</span> DynamoDBClient <span style="color:#0550ae">}</span> <span style="color:#0550ae">=</span> require<span style="color:#0550ae">(</span><span style="color:#0a3069">&#39;@aws-sdk/client-dynamodb&#39;</span><span style="color:#0550ae">)</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>const <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    DynamoDBDocumentClient,
+</span></span><span style="display:flex;"><span>    ScanCommand,
+</span></span><span style="display:flex;"><span>    GetCommand,
+</span></span><span style="display:flex;"><span>    PutCommand,
+</span></span><span style="display:flex;"><span>    UpdateCommand,
+</span></span><span style="display:flex;"><span>    DeleteCommand
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span> <span style="color:#0550ae">=</span> require<span style="color:#0550ae">(</span><span style="color:#0a3069">&#39;@aws-sdk/lib-dynamodb&#39;</span><span style="color:#0550ae">)</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>const <span style="color:#0550ae">{</span> randomUUID <span style="color:#0550ae">}</span> <span style="color:#0550ae">=</span> require<span style="color:#0550ae">(</span><span style="color:#0a3069">&#39;crypto&#39;</span><span style="color:#0550ae">)</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">client</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">new</span> <span style="color:#1f2328">DynamoDBClient</span><span style="color:#1f2328">({});</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">dynamodb</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">DynamoDBDocumentClient</span><span style="color:#1f2328">.</span><span style="color:#1f2328">from</span><span style="color:#1f2328">(</span><span style="color:#1f2328">client</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span>const <span style="color:#953800">client</span> <span style="color:#0550ae">=</span> new DynamoDBClient<span style="color:#0550ae">({})</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>const <span style="color:#953800">dynamodb</span> <span style="color:#0550ae">=</span> DynamoDBDocumentClient.from<span style="color:#0550ae">(</span>client<span style="color:#0550ae">)</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">TABLE_NAME</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#39;Users&#39;</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>const <span style="color:#953800">TABLE_NAME</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#39;Users&#39;</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">exports</span><span style="color:#1f2328">.</span><span style="color:#1f2328">handler</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">async</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">event</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">=&gt;</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Full Event:&#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">(</span><span style="color:#1f2328">event</span><span style="color:#1f2328">,</span> <span style="color:#cf222e">null</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">2</span><span style="color:#1f2328">));</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Event Received:&#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">resource</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">event</span><span style="color:#1f2328">.</span><span style="color:#1f2328">resource</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">path</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">event</span><span style="color:#1f2328">.</span><span style="color:#1f2328">path</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">pathParameters</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">event</span><span style="color:#1f2328">.</span><span style="color:#1f2328">pathParameters</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">httpMethod</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">event</span><span style="color:#1f2328">.</span><span style="color:#1f2328">httpMethod</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">});</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">httpMethod</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">pathParameters</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">body</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">resource</span> <span style="color:#1f2328">}</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">event</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>exports.handler <span style="color:#0550ae">=</span> async <span style="color:#0550ae">(</span>event<span style="color:#0550ae">)</span> <span style="color:#0550ae">=</span>&gt; <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    console.log<span style="color:#0550ae">(</span><span style="color:#0a3069">&#34;Full Event:&#34;</span>, JSON.stringify<span style="color:#0550ae">(</span>event, null, 2<span style="color:#0550ae">))</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    console.log<span style="color:#0550ae">(</span><span style="color:#0a3069">&#34;Event Received:&#34;</span>, <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        resource: event.resource,
+</span></span><span style="display:flex;"><span>        path: event.path,
+</span></span><span style="display:flex;"><span>        pathParameters: event.pathParameters,
+</span></span><span style="display:flex;"><span>        httpMethod: event.httpMethod
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">})</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#0550ae">{</span> httpMethod, pathParameters, body, resource <span style="color:#0550ae">}</span> <span style="color:#0550ae">=</span> event<span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">try</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">switch</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">httpMethod</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;GET&#39;</span><span style="color:#0550ae">:</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users&#39;</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">getAllUsers</span><span style="color:#1f2328">();</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span> <span style="color:#cf222e">else</span> <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users/{userID}&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> <span style="color:#1f2328">pathParameters</span><span style="color:#0550ae">?</span><span style="color:#1f2328">.</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">getUserById</span><span style="color:#1f2328">(</span><span style="color:#1f2328">pathParameters</span><span style="color:#1f2328">.</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">break</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    try <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        switch <span style="color:#0550ae">(</span>httpMethod<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;GET&#39;</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span><span style="color:#953800">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users&#39;</span><span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> await getAllUsers<span style="color:#0550ae">()</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0550ae">}</span> <span style="color:#cf222e">else</span> <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span><span style="color:#953800">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users/{userID}&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> pathParameters?.userID<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> await getUserById<span style="color:#0550ae">(</span>pathParameters.userID<span style="color:#0550ae">)</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>                break<span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;POST&#39;</span><span style="color:#0550ae">:</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users&#39;</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">createUser</span><span style="color:#1f2328">(</span><span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">parse</span><span style="color:#1f2328">(</span><span style="color:#1f2328">body</span><span style="color:#1f2328">));</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">break</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;POST&#39;</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span><span style="color:#953800">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users&#39;</span><span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> await createUser<span style="color:#0550ae">(</span>JSON.parse<span style="color:#0550ae">(</span>body<span style="color:#0550ae">))</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>                break<span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;PUT&#39;</span><span style="color:#0550ae">:</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users/{userID}&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> <span style="color:#1f2328">pathParameters</span><span style="color:#0550ae">?</span><span style="color:#1f2328">.</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">updateUser</span><span style="color:#1f2328">(</span><span style="color:#1f2328">pathParameters</span><span style="color:#1f2328">.</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">parse</span><span style="color:#1f2328">(</span><span style="color:#1f2328">body</span><span style="color:#1f2328">));</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">break</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;PUT&#39;</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span><span style="color:#953800">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users/{userID}&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> pathParameters?.userID<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> await updateUser<span style="color:#0550ae">(</span>pathParameters.userID, JSON.parse<span style="color:#0550ae">(</span>body<span style="color:#0550ae">))</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>                break<span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;DELETE&#39;</span><span style="color:#0550ae">:</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users/{userID}&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> <span style="color:#1f2328">pathParameters</span><span style="color:#0550ae">?</span><span style="color:#1f2328">.</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">deleteUser</span><span style="color:#1f2328">(</span><span style="color:#1f2328">pathParameters</span><span style="color:#1f2328">.</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">break</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">case</span> <span style="color:#0a3069">&#39;DELETE&#39;</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span><span style="color:#953800">resource</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;/v1/users/{userID}&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> pathParameters?.userID<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#cf222e">return</span> await deleteUser<span style="color:#0550ae">(</span>pathParameters.userID<span style="color:#0550ae">)</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>                break<span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;No matching route found for:&#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">httpMethod</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">resource</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">pathParameters</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">});</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">404</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">message</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#39;Not Found&#39;</span> <span style="color:#1f2328">})</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span> <span style="color:#cf222e">catch</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">error</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">error</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Lambda Error:&#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">message</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">error</span><span style="color:#1f2328">.</span><span style="color:#1f2328">message</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">stack</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">error</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stack</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span>        console.log<span style="color:#0550ae">(</span><span style="color:#0a3069">&#34;No matching route found for:&#34;</span>, <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            httpMethod,
+</span></span><span style="display:flex;"><span>            resource,
+</span></span><span style="display:flex;"><span>            pathParameters
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">})</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            statusCode: 404,
+</span></span><span style="display:flex;"><span>            body: JSON.stringify<span style="color:#0550ae">({</span> message: <span style="color:#0a3069">&#39;Not Found&#39;</span> <span style="color:#0550ae">})</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span> catch <span style="color:#0550ae">(</span>error<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        console.error<span style="color:#0550ae">(</span><span style="color:#0a3069">&#34;Lambda Error:&#34;</span>, <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            message: error.message,
+</span></span><span style="display:flex;"><span>            stack: error.stack
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">})</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">500</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">message</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">error</span><span style="color:#1f2328">.</span><span style="color:#1f2328">message</span> <span style="color:#0550ae">||</span> <span style="color:#0a3069">&#39;Internal server error&#39;</span> <span style="color:#1f2328">})</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">};</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            statusCode: 500,
+</span></span><span style="display:flex;"><span>            body: JSON.stringify<span style="color:#0550ae">({</span> message: error.message <span style="color:#0550ae">||</span> <span style="color:#0a3069">&#39;Internal server error&#39;</span> <span style="color:#0550ae">})</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">// ========== DynamoDB Functions ==========
-</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">getAllUsers</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">result</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">dynamodb</span><span style="color:#1f2328">.</span><span style="color:#1f2328">send</span><span style="color:#1f2328">(</span><span style="color:#cf222e">new</span> <span style="color:#1f2328">ScanCommand</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">TableName</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">TABLE_NAME</span> <span style="color:#1f2328">}));</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">200</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">(</span><span style="color:#1f2328">result</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Items</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>// <span style="color:#0550ae">==========</span> DynamoDB <span style="color:#953800">Functions</span> <span style="color:#0550ae">==========</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">getUserById</span><span style="color:#1f2328">(</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">result</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">dynamodb</span><span style="color:#1f2328">.</span><span style="color:#1f2328">send</span><span style="color:#1f2328">(</span><span style="color:#cf222e">new</span> <span style="color:#1f2328">GetCommand</span><span style="color:#1f2328">({</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">TableName</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">TABLE_NAME</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">Key</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">userID</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}));</span>
+</span></span><span style="display:flex;"><span>async <span style="color:#cf222e">function</span> getAllUsers<span style="color:#0550ae">()</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">result</span> <span style="color:#0550ae">=</span> await dynamodb.send<span style="color:#0550ae">(</span>new ScanCommand<span style="color:#0550ae">({</span> TableName: TABLE_NAME <span style="color:#0550ae">}))</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        statusCode: 200,
+</span></span><span style="display:flex;"><span>        body: JSON.stringify<span style="color:#0550ae">(</span>result.Items<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#0550ae">!</span><span style="color:#1f2328">result</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Item</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">404</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">message</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#39;User not found&#39;</span> <span style="color:#1f2328">})</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>async <span style="color:#cf222e">function</span> getUserById<span style="color:#0550ae">(</span>userID<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">result</span> <span style="color:#0550ae">=</span> await dynamodb.send<span style="color:#0550ae">(</span>new GetCommand<span style="color:#0550ae">({</span>
+</span></span><span style="display:flex;"><span>        TableName: TABLE_NAME,
+</span></span><span style="display:flex;"><span>        Key: <span style="color:#0550ae">{</span> userID <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}))</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">200</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">(</span><span style="color:#1f2328">result</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Item</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span>!result.Item<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            statusCode: 404,
+</span></span><span style="display:flex;"><span>            body: JSON.stringify<span style="color:#0550ae">({</span> message: <span style="color:#0a3069">&#39;User not found&#39;</span> <span style="color:#0550ae">})</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">createUser</span><span style="color:#1f2328">(</span><span style="color:#1f2328">userData</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">userID</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">randomUUID</span><span style="color:#1f2328">();</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">user</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">userID</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">...</span><span style="color:#1f2328">userData</span> <span style="color:#1f2328">};</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        statusCode: 200,
+</span></span><span style="display:flex;"><span>        body: JSON.stringify<span style="color:#0550ae">(</span>result.Item<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">await</span> <span style="color:#1f2328">dynamodb</span><span style="color:#1f2328">.</span><span style="color:#1f2328">send</span><span style="color:#1f2328">(</span><span style="color:#cf222e">new</span> <span style="color:#1f2328">PutCommand</span><span style="color:#1f2328">({</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">TableName</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">TABLE_NAME</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">Item</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">user</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}));</span>
+</span></span><span style="display:flex;"><span>async <span style="color:#cf222e">function</span> createUser<span style="color:#0550ae">(</span>userData<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">userID</span> <span style="color:#0550ae">=</span> randomUUID<span style="color:#0550ae">()</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">user</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">{</span> userID, ...userData <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">201</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">(</span><span style="color:#1f2328">user</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>    await dynamodb.send<span style="color:#0550ae">(</span>new PutCommand<span style="color:#0550ae">({</span>
+</span></span><span style="display:flex;"><span>        TableName: TABLE_NAME,
+</span></span><span style="display:flex;"><span>        Item: user
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}))</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">updateUser</span><span style="color:#1f2328">(</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">userData</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">updateExpression</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">[];</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">expressionAttributeValues</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">{};</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">const</span> <span style="color:#1f2328">expressionAttributeNames</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">{};</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        statusCode: 201,
+</span></span><span style="display:flex;"><span>        body: JSON.stringify<span style="color:#0550ae">(</span>user<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">Object</span><span style="color:#1f2328">.</span><span style="color:#1f2328">keys</span><span style="color:#1f2328">(</span><span style="color:#1f2328">userData</span><span style="color:#1f2328">).</span><span style="color:#1f2328">forEach</span><span style="color:#1f2328">(</span><span style="color:#1f2328">key</span> <span style="color:#1f2328">=&gt;</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">updateExpression</span><span style="color:#1f2328">.</span><span style="color:#1f2328">push</span><span style="color:#1f2328">(</span><span style="color:#0a3069">`#</span><span style="color:#0a3069">${</span><span style="color:#1f2328">key</span><span style="color:#0a3069">}</span><span style="color:#0a3069"> = :</span><span style="color:#0a3069">${</span><span style="color:#1f2328">key</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">expressionAttributeValues</span><span style="color:#1f2328">[</span><span style="color:#0a3069">`:</span><span style="color:#0a3069">${</span><span style="color:#1f2328">key</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">userData</span><span style="color:#1f2328">[</span><span style="color:#1f2328">key</span><span style="color:#1f2328">];</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">expressionAttributeNames</span><span style="color:#1f2328">[</span><span style="color:#0a3069">`#</span><span style="color:#0a3069">${</span><span style="color:#1f2328">key</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">key</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span>async <span style="color:#cf222e">function</span> updateUser<span style="color:#0550ae">(</span>userID, userData<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">updateExpression</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">[]</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">expressionAttributeValues</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">{}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    const <span style="color:#953800">expressionAttributeNames</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">{}</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">try</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">const</span> <span style="color:#1f2328">result</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">dynamodb</span><span style="color:#1f2328">.</span><span style="color:#1f2328">send</span><span style="color:#1f2328">(</span><span style="color:#cf222e">new</span> <span style="color:#1f2328">UpdateCommand</span><span style="color:#1f2328">({</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">TableName</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">TABLE_NAME</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">Key</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">userID</span> <span style="color:#1f2328">},</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">UpdateExpression</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">`SET </span><span style="color:#0a3069">${</span><span style="color:#1f2328">updateExpression</span><span style="color:#1f2328">.</span><span style="color:#1f2328">join</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;, &#39;</span><span style="color:#1f2328">)</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">ExpressionAttributeValues</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">expressionAttributeValues</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">ExpressionAttributeNames</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">expressionAttributeNames</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">ConditionExpression</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#39;attribute_exists(userID)&#39;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">ReturnValues</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#39;ALL_NEW&#39;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">}));</span>
+</span></span><span style="display:flex;"><span>    Object.keys<span style="color:#0550ae">(</span>userData<span style="color:#0550ae">)</span>.forEach<span style="color:#0550ae">(</span><span style="color:#953800">key</span> <span style="color:#0550ae">=</span>&gt; <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        updateExpression.push<span style="color:#0550ae">(</span><span style="color:#0a3069">`</span><span style="color:#57606a">#${key} = :${key}`);</span>
+</span></span><span style="display:flex;"><span>        expressionAttributeValues<span style="color:#0550ae">[</span><span style="color:#0a3069">`</span>:<span style="color:#0a3069">${</span><span style="color:#953800">key</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#0550ae">]</span> <span style="color:#0550ae">=</span> userData<span style="color:#0550ae">[</span>key<span style="color:#0550ae">]</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>        expressionAttributeNames<span style="color:#0550ae">[</span><span style="color:#0a3069">`</span><span style="color:#57606a">#${key}`] = key;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">})</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">200</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">(</span><span style="color:#1f2328">result</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Attributes</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span> <span style="color:#cf222e">catch</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">error</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">if</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">error</span><span style="color:#1f2328">.</span><span style="color:#1f2328">name</span> <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;ConditionalCheckFailedException&#39;</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">404</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">JSON</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stringify</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">message</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#39;User not found&#39;</span> <span style="color:#1f2328">})</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">throw</span> <span style="color:#1f2328">error</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>    try <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        const <span style="color:#953800">result</span> <span style="color:#0550ae">=</span> await dynamodb.send<span style="color:#0550ae">(</span>new UpdateCommand<span style="color:#0550ae">({</span>
+</span></span><span style="display:flex;"><span>            TableName: TABLE_NAME,
+</span></span><span style="display:flex;"><span>            Key: <span style="color:#0550ae">{</span> userID <span style="color:#0550ae">}</span>,
+</span></span><span style="display:flex;"><span>            UpdateExpression: <span style="color:#0a3069">`</span>SET <span style="color:#0a3069">${</span><span style="color:#953800">updateExpression</span><span style="color:#1f2328">.join(</span><span style="color:#0a3069">&#39;, &#39;</span><span style="color:#1f2328">)</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span>,
+</span></span><span style="display:flex;"><span>            ExpressionAttributeValues: expressionAttributeValues,
+</span></span><span style="display:flex;"><span>            ExpressionAttributeNames: expressionAttributeNames,
+</span></span><span style="display:flex;"><span>            ConditionExpression: <span style="color:#0a3069">&#39;attribute_exists(userID)&#39;</span>,
+</span></span><span style="display:flex;"><span>            ReturnValues: <span style="color:#0a3069">&#39;ALL_NEW&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}))</span><span style="color:#1f2328">;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">deleteUser</span><span style="color:#1f2328">(</span><span style="color:#1f2328">userID</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">await</span> <span style="color:#1f2328">dynamodb</span><span style="color:#1f2328">.</span><span style="color:#1f2328">send</span><span style="color:#1f2328">(</span><span style="color:#cf222e">new</span> <span style="color:#1f2328">DeleteCommand</span><span style="color:#1f2328">({</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">TableName</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">TABLE_NAME</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">Key</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">{</span> <span style="color:#1f2328">userID</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            statusCode: 200,
+</span></span><span style="display:flex;"><span>            body: JSON.stringify<span style="color:#0550ae">(</span>result.Attributes<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span> catch <span style="color:#0550ae">(</span>error<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cf222e">if</span> <span style="color:#0550ae">(</span>error.name <span style="color:#0550ae">===</span> <span style="color:#0a3069">&#39;ConditionalCheckFailedException&#39;</span><span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>                statusCode: 404,
+</span></span><span style="display:flex;"><span>                body: JSON.stringify<span style="color:#0550ae">({</span> message: <span style="color:#0a3069">&#39;User not found&#39;</span> <span style="color:#0550ae">})</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>        throw error<span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">statusCode</span><span style="color:#0550ae">:</span> <span style="color:#0550ae">204</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">body</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>async <span style="color:#cf222e">function</span> deleteUser<span style="color:#0550ae">(</span>userID<span style="color:#0550ae">)</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>    await dynamodb.send<span style="color:#0550ae">(</span>new DeleteCommand<span style="color:#0550ae">({</span>
+</span></span><span style="display:flex;"><span>        TableName: TABLE_NAME,
+</span></span><span style="display:flex;"><span>        Key: <span style="color:#0550ae">{</span> userID <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}))</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">return</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>        statusCode: 204,
+</span></span><span style="display:flex;"><span>        body: <span style="color:#0a3069">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
 </span></span></code></pre></div><p>When you just added new source code, Lambda will notify that the source code has been changed and ask you to save it.
 
 <div class="notices info" ><p>Make sure this source code file is saved with the name <code>index.js</code> in the root directory of the Lambda function. Lambda will automatically use this file as the entry point for the function.</p>
@@ -1168,19 +1168,19 @@ For simplicity, we use a single Lambda function to handle all CRUD requests. You
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/internworkshop/js/clipboard.min.js?1753241447"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753241447"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753241447"></script>
-    <script src="/internworkshop/js/jquery.sticky.js?1753241447"></script>
-    <script src="/internworkshop/js/featherlight.min.js?1753241447"></script>
-    <script src="/internworkshop/js/highlight.pack.js?1753241447"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1753243106"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753243106"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753243106"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1753243106"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1753243106"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1753243106"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753241447"></script>
-    <script src="/internworkshop/js/learn.js?1753241447"></script>
-    <script src="/internworkshop/js/hugo-learn.js?1753241447"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753243106"></script>
+    <script src="/internworkshop/js/learn.js?1753243106"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1753243106"></script>
 
-    <link href="/internworkshop/mermaid/mermaid.css?1753241447" rel="stylesheet" />
-    <script src="/internworkshop/mermaid/mermaid.js?1753241447"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1753243106" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1753243106"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

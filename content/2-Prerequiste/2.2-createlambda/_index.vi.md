@@ -48,7 +48,7 @@ Bạn có thể tải mã nguồn trực tiếp lên Lambda hoặc sử dụng A
 Để đơn giản, chúng ta sẽ thêm mã nguồn trực tiếp lên Lambda.
 1. Trong trang quản lý Lambda function `UserService`, ở tab "Code", bạn sẽ thấy một trình soạn thảo mã nguồn.
 2. Sao chép và dán mã nguồn sau vào trình soạn thảo:
-```javascript
+```bash
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
 const {
     DynamoDBDocumentClient,

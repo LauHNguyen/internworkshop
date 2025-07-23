@@ -90,7 +90,7 @@ Here you will see the permissions that the Lambda function has been granted corr
 
 You can test the API using Postman or curl to send requests to the endpoints you created.
 For example, add a new user by sending a POST request with user data in the body.
-```js
+```bash
 {
     "userID": "12345",
     "name": "John Doe",

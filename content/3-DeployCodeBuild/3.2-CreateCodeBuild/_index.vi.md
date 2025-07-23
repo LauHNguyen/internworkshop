@@ -63,7 +63,7 @@ Vậy là bạn đã tạo xong dự án CodeBuild. Bây giờ, bạn có thể 
 ![Create Policy](CreatePolicy.png)
 6. Chọn **JSON** và dán vào đoạn mã sau để cấp quyền truy cập vào S3 và API Gateway:
 
-```json
+```bash
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -85,6 +85,7 @@ Vậy là bạn đã tạo xong dự án CodeBuild. Bây giờ, bạn có thể 
 }
 ```
 Ở đây mình thêm quyền truy cập vào API Gateway và S3. Bạn cần thay thế `region-id`, `api-id`, `stage-name`, và `aws-account-id` bằng các giá trị tương ứng của bạn.
+
 7. Nhấn **Review policy**, đặt tên cho policy này (ví dụ: `CodeBuildUserServicePolicy`), và nhấn **Create policy**.
 8. Quay lại vai trò IAM mà bạn đã chọn, nhấp vào **Attach policies** và tìm kiếm policy vừa tạo.
 9. Chọn policy đó và nhấn **Attach policy** để gán quyền cho vai trò.

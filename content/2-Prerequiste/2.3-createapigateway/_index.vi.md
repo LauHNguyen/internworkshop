@@ -90,7 +90,7 @@ Quay lại Lambda function tab "Configuration", chọn tab "Permissions" và cu�
 
 Bạn có thể kiểm tra API bằng cách sử dụng Postman hoặc curl để gửi các yêu cầu đến các endpoint mà bạn đã tạo.
 Ví dụ, thêm một người dùng mới bằng cách gửi một yêu cầu POST với dữ liệu người dùng trong body.
-```js
+```bash
 {
     "userID": "12345",
     "name": "John Doe",

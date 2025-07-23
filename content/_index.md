@@ -7,7 +7,7 @@ chapter : false
 # API-First Development with OpenAPI and Code Generation
 
 ### Overall
- In this lab, you will learn the basic and practices of API Gateway, Lambda functions, CodeBuild, and CodePipeline. Practice deploying api with OpenAPI as well as automating the deployment process and testing code after pushing it to github.
+ In this lab, you will learn the basic and practices of API Gateway, Lambda functions, CodeBuild, and CodePipeline. Practice deploying APIs with OpenAPI as well as automating the deployment process and testing code after pushing it to github.
 
 ![AWSArchitecture](api_first_development.png)
 

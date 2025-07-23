@@ -48,7 +48,7 @@ You can upload source code directly to Lambda or use AWS CLI or AWS SDK to uploa
 For simplicity, we will add source code directly to Lambda.
 1. In the Lambda function `UserService` management page, in the "Code" tab, you will see a source code editor.
 2. Copy and paste the following source code into the editor:
-```javascript
+```bash
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
 const {
     DynamoDBDocumentClient,

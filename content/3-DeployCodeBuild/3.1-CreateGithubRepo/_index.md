@@ -75,7 +75,7 @@ To automatically generate simple Jest test files based on the API created from t
 
 Create the generate-simple-tests.js file in the UserService directory with the following content:
 
-```javascript
+```bash
 const fs = require('fs');
 const path = require('path');
 
@@ -161,7 +161,7 @@ The `buildspec.yml` file is a configuration file for AWS CodeBuild that defines 
 
 The content of the `buildspec.yml` file is as follows:
 
-```yaml
+```bash
 version: 0.2
 
 cache:
@@ -237,7 +237,7 @@ artifacts:
 ```
 
 And your directory structure will look like this:
-```
+```bash
 UserService/
 ├── frontend/
 │   ├── node_modules/

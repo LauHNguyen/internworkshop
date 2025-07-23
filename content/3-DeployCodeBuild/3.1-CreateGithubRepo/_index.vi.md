@@ -34,8 +34,10 @@ cd UserService
 
 ### Tạo file frontend
 Để tạo một ứng dụng frontend đơn giản, bạn có thể sử dụng React. Bạn cần cài đặt Node.js và npm (Node Package Manager) trên máy tính của mình trước khi thực hiện bước này.
+
 Nếu bạn chưa cài đặt Node.js, bạn có thể tải xuống và cài đặt từ [trang web chính thức của Node.js](https://nodejs.org/).
 Và npm sẽ được cài đặt cùng với Node.js.
+
 Sau khi cài đặt Node.js và npm, bạn có thể tạo một ứng dụng React mới bằng cách sử dụng Create React App, một công cụ tạo ứng dụng React nhanh chóng và dễ dàng.
 Để tạo ứng dụng React, bạn có thể sử dụng lệnh sau trong terminal:
 
@@ -75,7 +77,7 @@ cd ..
 
 Tạo file generate-simple-tests.js trong thư mục UserService với nội dung sau:
 
-```javascript
+```bash
 const fs = require('fs');
 const path = require('path');
 
@@ -161,7 +163,7 @@ File `buildspec.yml` là file cấu hình cho AWS CodeBuild, nó định nghĩa 
 
 Nội dung của file `buildspec.yml` như sau:
 
-```yaml
+```bash
 version: 0.2
 
 cache:
@@ -237,7 +239,7 @@ artifacts:
 ```
 
 Và cấu trúc thư mục của bạn sẽ trông như sau:
-```
+```bash
 UserService/
 ├── frontend/
 │   ├── node_modules/

@@ -12,21 +12,21 @@
     <title>Tạo dịch vụ CodeBuild :: AWS System Manager</title>
 
     
-    <link href="/internworkshop/css/nucleus.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/fontawesome-all.min.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/hybrid.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/featherlight.min.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/auto-complete.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/theme.css?1753241447" rel="stylesheet">
-    <link href="/internworkshop/css/hugo-theme.css?1753241447" rel="stylesheet">
+    <link href="/internworkshop/css/nucleus.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/fontawesome-all.min.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/hybrid.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/featherlight.min.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/perfect-scrollbar.min.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/auto-complete.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/atom-one-dark-reasonable.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/theme.css?1753243106" rel="stylesheet">
+    <link href="/internworkshop/css/hugo-theme.css?1753243106" rel="stylesheet">
     
-    <link href="/internworkshop/css/theme-workshop.css?1753241447" rel="stylesheet">
+    <link href="/internworkshop/css/theme-workshop.css?1753243106" rel="stylesheet">
     
     
 
-    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753241447"></script>
+    <script src="/internworkshop/js/jquery-3.3.1.min.js?1753243106"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753241447"></script>
-<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753241447"></script>
+<script type="text/javascript" src="/internworkshop/js/lunr.min.js?1753243106"></script>
+<script type="text/javascript" src="/internworkshop/js/auto-complete.js?1753243106"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/internworkshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/internworkshop/js/search.js?1753241447"></script>
+<script type="text/javascript" src="/internworkshop/js/search.js?1753243106"></script>
 
     
   </div>
@@ -713,29 +713,31 @@ STAGE là giai đoạn bạn muốn triển khai trong API Gateway (ví dụ: &l
 <img src="/internworkshop/3-deploycodebuild/3.2-createcodebuild/CreatePolicy.png" alt="Create Policy"></li>
 <li>Chọn <strong>JSON</strong> và dán vào đoạn mã sau để cấp quyền truy cập vào S3 và API Gateway:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;Version&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;2012-10-17&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;Statement&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Effect&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Allow&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Action&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;apigateway:GET&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Resource&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;arn:aws:apigateway:region-id::/restapis/api-id/stages/stage-name/exports/*&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Effect&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Allow&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Action&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#0a3069">&#34;s3:PutObject&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#0a3069">&#34;s3:GetObject&#34;</span><span style="color:#1f2328">,</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0a3069">&#34;Version&#34;</span>: <span style="color:#0a3069">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#0a3069">&#34;Statement&#34;</span>: <span style="color:#0550ae">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Effect&#34;</span>: <span style="color:#0a3069">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Action&#34;</span>: <span style="color:#0a3069">&#34;apigateway:GET&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Resource&#34;</span>: <span style="color:#0a3069">&#34;arn:aws:apigateway:region-id::/restapis/api-id/stages/stage-name/exports/*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Effect&#34;</span>: <span style="color:#0a3069">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Action&#34;</span>: <span style="color:#0550ae">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0a3069">&#34;s3:PutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#0a3069">&#34;s3:GetObject&#34;</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#0a3069">&#34;s3:ListBucket&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">],</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">&#34;Resource&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;arn:aws:s3:::codebuild-[region-id]-[aws-account-id]/*&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p>Ở đây mình thêm quyền truy cập vào API Gateway và S3. Bạn cần thay thế <code>region-id</code>, <code>api-id</code>, <code>stage-name</code>, và <code>aws-account-id</code> bằng các giá trị tương ứng của bạn.
-7. Nhấn <strong>Review policy</strong>, đặt tên cho policy này (ví dụ: <code>CodeBuildUserServicePolicy</code>), và nhấn <strong>Create policy</strong>.
-8. Quay lại vai trò IAM mà bạn đã chọn, nhấp vào <strong>Attach policies</strong> và tìm kiếm policy vừa tạo.
-9. Chọn policy đó và nhấn <strong>Attach policy</strong> để gán quyền cho vai trò.</p>
+</span></span><span style="display:flex;"><span>      <span style="color:#0550ae">]</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Resource&#34;</span>: <span style="color:#0a3069">&#34;arn:aws:s3:::codebuild-[region-id]-[aws-account-id]/*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span></code></pre></div><p>Ở đây mình thêm quyền truy cập vào API Gateway và S3. Bạn cần thay thế <code>region-id</code>, <code>api-id</code>, <code>stage-name</code>, và <code>aws-account-id</code> bằng các giá trị tương ứng của bạn.</p>
+<ol start="7">
+<li>Nhấn <strong>Review policy</strong>, đặt tên cho policy này (ví dụ: <code>CodeBuildUserServicePolicy</code>), và nhấn <strong>Create policy</strong>.</li>
+<li>Quay lại vai trò IAM mà bạn đã chọn, nhấp vào <strong>Attach policies</strong> và tìm kiếm policy vừa tạo.</li>
+<li>Chọn policy đó và nhấn <strong>Attach policy</strong> để gán quyền cho vai trò.</li>
+</ol>
 <p><img src="/internworkshop/3-deploycodebuild/3.2-createcodebuild/AttachPolicy.png" alt="Attach Policy"></p>
 <h3 id="chạy-dự-án-codebuild">Chạy dự án CodeBuild</h3>
 <p>Bây giờ bạn đã tạo xong dự án CodeBuild và gán quyền cho vai trò IAM, bạn có thể chạy dự án này để biên dịch mã nguồn của mình.</p>
@@ -1029,19 +1031,19 @@ STAGE là giai đoạn bạn muốn triển khai trong API Gateway (ví dụ: &l
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/internworkshop/js/clipboard.min.js?1753241447"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753241447"></script>
-    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753241447"></script>
-    <script src="/internworkshop/js/jquery.sticky.js?1753241447"></script>
-    <script src="/internworkshop/js/featherlight.min.js?1753241447"></script>
-    <script src="/internworkshop/js/highlight.pack.js?1753241447"></script>
+    <script src="/internworkshop/js/clipboard.min.js?1753243106"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.min.js?1753243106"></script>
+    <script src="/internworkshop/js/perfect-scrollbar.jquery.min.js?1753243106"></script>
+    <script src="/internworkshop/js/jquery.sticky.js?1753243106"></script>
+    <script src="/internworkshop/js/featherlight.min.js?1753243106"></script>
+    <script src="/internworkshop/js/highlight.pack.js?1753243106"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753241447"></script>
-    <script src="/internworkshop/js/learn.js?1753241447"></script>
-    <script src="/internworkshop/js/hugo-learn.js?1753241447"></script>
+    <script src="/internworkshop/js/modernizr.custom-3.6.0.js?1753243106"></script>
+    <script src="/internworkshop/js/learn.js?1753243106"></script>
+    <script src="/internworkshop/js/hugo-learn.js?1753243106"></script>
 
-    <link href="/internworkshop/mermaid/mermaid.css?1753241447" rel="stylesheet" />
-    <script src="/internworkshop/mermaid/mermaid.js?1753241447"></script>
+    <link href="/internworkshop/mermaid/mermaid.css?1753243106" rel="stylesheet" />
+    <script src="/internworkshop/mermaid/mermaid.js?1753243106"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Create CodeBuild Service on AWS System Manager</title>
-    <link>https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.2-createcodebuild/</link>
+    <link>http://localhost:1313/internworkshop/3-deploycodebuild/3.2-createcodebuild/</link>
     <description>Recent content in Create CodeBuild Service on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.2-createcodebuild/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/internworkshop/3-deploycodebuild/3.2-createcodebuild/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

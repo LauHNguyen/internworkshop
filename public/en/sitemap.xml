@@ -2,210 +2,210 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lauhnguyen.github.io/internworkshop/</loc>
+    <loc>http://localhost:1313/internworkshop/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/"
+                href="http://localhost:1313/internworkshop/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/"
+                href="http://localhost:1313/internworkshop/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/4-monitoring/4.1-configapigateway/</loc>
+    <loc>http://localhost:1313/internworkshop/4-monitoring/4.1-configapigateway/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/4-monitoring/4.1-configapigateway/"
+                href="http://localhost:1313/internworkshop/vi/4-monitoring/4.1-configapigateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/4-monitoring/4.1-configapigateway/"
+                href="http://localhost:1313/internworkshop/4-monitoring/4.1-configapigateway/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/4-monitoring/4.2-configlambda/</loc>
+    <loc>http://localhost:1313/internworkshop/4-monitoring/4.2-configlambda/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/4-monitoring/4.2-configlambda/"
+                href="http://localhost:1313/internworkshop/vi/4-monitoring/4.2-configlambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/4-monitoring/4.2-configlambda/"
+                href="http://localhost:1313/internworkshop/4-monitoring/4.2-configlambda/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.1-creategithubrepo/</loc>
+    <loc>http://localhost:1313/internworkshop/3-deploycodebuild/3.1-creategithubrepo/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/"
+                href="http://localhost:1313/internworkshop/vi/3-deploycodebuild/3.1-creategithubrepo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.1-creategithubrepo/"
+                href="http://localhost:1313/internworkshop/3-deploycodebuild/3.1-creategithubrepo/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/1-introduce/</loc>
+    <loc>http://localhost:1313/internworkshop/1-introduce/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/1-introduce/"
+                href="http://localhost:1313/internworkshop/vi/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/1-introduce/"
+                href="http://localhost:1313/internworkshop/1-introduce/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.1-createdynamodb/</loc>
+    <loc>http://localhost:1313/internworkshop/2-prerequiste/2.1-createdynamodb/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/2-prerequiste/2.1-createdynamodb/"
+                href="http://localhost:1313/internworkshop/vi/2-prerequiste/2.1-createdynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.1-createdynamodb/"
+                href="http://localhost:1313/internworkshop/2-prerequiste/2.1-createdynamodb/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.2-createcodebuild/</loc>
+    <loc>http://localhost:1313/internworkshop/3-deploycodebuild/3.2-createcodebuild/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/3-deploycodebuild/3.2-createcodebuild/"
+                href="http://localhost:1313/internworkshop/vi/3-deploycodebuild/3.2-createcodebuild/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/3.2-createcodebuild/"
+                href="http://localhost:1313/internworkshop/3-deploycodebuild/3.2-createcodebuild/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.2-createlambda/</loc>
+    <loc>http://localhost:1313/internworkshop/2-prerequiste/2.2-createlambda/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/2-prerequiste/2.2-createlambda/"
+                href="http://localhost:1313/internworkshop/vi/2-prerequiste/2.2-createlambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.2-createlambda/"
+                href="http://localhost:1313/internworkshop/2-prerequiste/2.2-createlambda/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/2-prerequiste/</loc>
+    <loc>http://localhost:1313/internworkshop/2-prerequiste/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/2-prerequiste/"
+                href="http://localhost:1313/internworkshop/vi/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/2-prerequiste/"
+                href="http://localhost:1313/internworkshop/2-prerequiste/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.3-createapigateway/</loc>
+    <loc>http://localhost:1313/internworkshop/2-prerequiste/2.3-createapigateway/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/2-prerequiste/2.3-createapigateway/"
+                href="http://localhost:1313/internworkshop/vi/2-prerequiste/2.3-createapigateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/2-prerequiste/2.3-createapigateway/"
+                href="http://localhost:1313/internworkshop/2-prerequiste/2.3-createapigateway/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/</loc>
+    <loc>http://localhost:1313/internworkshop/3-deploycodebuild/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/3-deploycodebuild/"
+                href="http://localhost:1313/internworkshop/vi/3-deploycodebuild/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/3-deploycodebuild/"
+                href="http://localhost:1313/internworkshop/3-deploycodebuild/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/4-monitoring/</loc>
+    <loc>http://localhost:1313/internworkshop/4-monitoring/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/4-monitoring/"
+                href="http://localhost:1313/internworkshop/vi/4-monitoring/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/4-monitoring/"
+                href="http://localhost:1313/internworkshop/4-monitoring/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/5-deploycodepipeline/</loc>
+    <loc>http://localhost:1313/internworkshop/5-deploycodepipeline/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/5-deploycodepipeline/"
+                href="http://localhost:1313/internworkshop/vi/5-deploycodepipeline/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/5-deploycodepipeline/"
+                href="http://localhost:1313/internworkshop/5-deploycodepipeline/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/6-cleanup/</loc>
+    <loc>http://localhost:1313/internworkshop/6-cleanup/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/6-cleanup/"
+                href="http://localhost:1313/internworkshop/vi/6-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/6-cleanup/"
+                href="http://localhost:1313/internworkshop/6-cleanup/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/categories/</loc>
+    <loc>http://localhost:1313/internworkshop/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/categories/"
+                href="http://localhost:1313/internworkshop/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/categories/"
+                href="http://localhost:1313/internworkshop/categories/"
                 />
   </url><url>
-    <loc>https://lauhnguyen.github.io/internworkshop/tags/</loc>
+    <loc>http://localhost:1313/internworkshop/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://lauhnguyen.github.io/internworkshop/vi/tags/"
+                href="http://localhost:1313/internworkshop/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://lauhnguyen.github.io/internworkshop/tags/"
+                href="http://localhost:1313/internworkshop/tags/"
                 />
   </url>
 </urlset>

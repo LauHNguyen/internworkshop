@@ -15,7 +15,7 @@ chapter : false
 
  1. [Giới thiệu](1-introduce/)
  2. [Các bước chuẩn bị](2-Prerequiste/)
- 3. [Tạo kết nối đến máy chủ EC2](3-Accessibilitytoinstance/)
- 4. [API-First Development logs](4-s3log/)
- 5. [Port Forwarding](5-Portfwd/)
+ 3. [Triển khai CodeBuild](3-DeployCodeBuild/)
+ 4. [Giám sát và cảnh báo](4-Monitoring/)
+ 5. [Triển khai CodePipeline](5-DeployCodePipeline/)
  6. [Dọn dẹp tài nguyên](6-cleanup/)

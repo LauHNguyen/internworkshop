@@ -4,7 +4,7 @@
 	"title": "API-First Development",
 	"tags": [],
 	"description": "",
-	"content": "Phát triển API-First với OpenAPI và Code Generation Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về API Gateway, Lambda function, CodeBuild và CodePipeline. Thực hành triển khai API với OpenAPI cũng như việc tự động hóa quá trình triển khai và kiểm tra code sau khi đẩy lên github.\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 API-First Development logs Port Forwarding Dọn dẹp tài nguyên "
+	"content": "Phát triển API-First với OpenAPI và Code Generation Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về API Gateway, Lambda function, CodeBuild và CodePipeline. Thực hành triển khai API với OpenAPI cũng như việc tự động hóa quá trình triển khai và kiểm tra code sau khi đẩy lên github.\nNội dung Giới thiệu Các bước chuẩn bị Triển khai CodeBuild Giám sát và cảnh báo Triển khai CodePipeline Dọn dẹp tài nguyên "
 },
 {
 	"uri": "http://localhost:1313/internworkshop/vi/4-monitoring/4.1-configapigateway/",

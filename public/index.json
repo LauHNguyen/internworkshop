@@ -4,7 +4,7 @@
 	"title": "API-First Development",
 	"tags": [],
 	"description": "",
-	"content": "API-First Development with OpenAPI and Code Generation Overall In this lab, you will learn the basic and practices of API Gateway, Lambda functions, CodeBuild, and CodePipeline. Practice deploying APIs with OpenAPI as well as automating the deployment process and testing code after pushing it to github.\nContent Introduction Preparation Connect to EC2 instance API-First Development logs Port Forwarding Clean up resources "
+	"content": "API-First Development with OpenAPI and Code Generation Overall In this lab, you will learn the basic and practices of API Gateway, Lambda functions, CodeBuild, and CodePipeline. Practice deploying APIs with OpenAPI as well as automating the deployment process and testing code after pushing it to github.\nContent Introduction Preparation Deploy CodeBuild Monitoring and Alerts Deploy CodePipeline Clean up resources "
 },
 {
 	"uri": "http://localhost:1313/internworkshop/4-monitoring/4.1-configapigateway/",
